@@ -161,7 +161,7 @@ export default function HomePage() {
               11 Medical Examination Subjects
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Select a subject to take Previous BCS questions or comprehensive mock tests
+              Select a subject to take authentic Previous BCS questions with explanations
             </p>
           </div>
 
