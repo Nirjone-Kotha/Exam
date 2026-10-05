@@ -12,7 +12,7 @@ import StickyExamHeader from "../../../components/StickyExamHeader";
 import QuestionCard from "../../../components/QuestionCard";
 import QuestionPalette from "../../../components/QuestionPalette";
 import ConfirmSubmitModal from "../../../components/ConfirmSubmitModal";
-import { ArrowLeft, AlertCircle, ShieldAlert } from "lucide-react";
+import { ShieldAlert, ListFilter } from "lucide-react";
 
 export default function ExamRoomPage() {
   const params = useParams();
@@ -103,7 +103,7 @@ export default function ExamRoomPage() {
   const handleJumpToQuestion = (index: number, questionId: string) => {
     const el = document.getElementById(`q-${questionId}`);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
@@ -152,7 +152,7 @@ export default function ExamRoomPage() {
   ).length;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-24">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-28">
       {/* 
         Sticky Top Header: Stays fixed at the top while scrolling 
         Contains the live countdown timer, progress, and submit button
@@ -171,18 +171,18 @@ export default function ExamRoomPage() {
       />
 
       {/* Main Questions Container: All questions rendered together on one scrollable page */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6">
+      <main className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-8 space-y-4 sm:space-y-6">
         
         {/* Negative marking & timing instruction alert */}
-        <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-4 text-xs sm:text-sm text-emerald-900 dark:text-emerald-300 flex items-start gap-3 shadow-sm">
-          <ShieldAlert className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
+        <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-3 sm:p-4 text-xs sm:text-sm text-emerald-900 dark:text-emerald-300 flex items-start gap-2.5 sm:gap-3 shadow-sm">
+          <ShieldAlert className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
           <div className="leading-relaxed">
-            <strong>Exam Instructions:</strong> All {shuffledQuestions.length} questions are loaded on this single page. Scroll smoothly to review and answer. Correct answer: <strong>+1.0 mark</strong>. Wrong answer: <strong>-0.5 mark</strong>. You can clear any selection to avoid negative marking.
+            <strong>Exam Mode:</strong> All {shuffledQuestions.length} questions loaded. Scroll freely. Correct: <strong>+1.0</strong>, Wrong: <strong>-0.5</strong>. Clear option anytime to avoid penalty.
           </div>
         </div>
 
         {/* All Questions rendered sequentially without pagination */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {shuffledQuestions.map((q, idx) => (
             <QuestionCard
               key={q.id}
@@ -198,24 +198,35 @@ export default function ExamRoomPage() {
         </div>
 
         {/* Bottom Final Submit Trigger */}
-        <div className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center space-y-4">
-          <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-            Finished Answering All Questions?
+        <div className="p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-center space-y-3 sm:space-y-4">
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+            Finished Answering Questions?
           </h3>
           <p className="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">
-            You have answered {answeredCount} out of {shuffledQuestions.length} questions. Click below to submit and get your instant evaluation.
+            You have answered {answeredCount} of {shuffledQuestions.length} questions.
           </p>
           <button
             type="button"
             onClick={() => setIsSubmitModalOpen(true)}
-            className="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-500/25 active:scale-95 transition-all"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-500/25 active:scale-95 transition-all min-h-[44px]"
           >
             Review & Finalize Submission
           </button>
         </div>
       </main>
 
-      {/* Floating Question Jump Palette */}
+      {/* Mobile Floating Action Button (FAB) for Question Navigator */}
+      <button
+        type="button"
+        onClick={() => setIsPaletteOpen(true)}
+        className="sm:hidden fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full bg-emerald-600 text-white shadow-xl shadow-emerald-600/40 flex items-center justify-center font-bold active:scale-90 border-2 border-white dark:border-slate-800 touch-manipulation transition-transform"
+        aria-label="Open Question Navigator"
+        title="Open Question Navigator"
+      >
+        <ListFilter className="w-5 h-5" />
+      </button>
+
+      {/* Floating / Bottom Sheet Question Jump Palette */}
       <QuestionPalette
         questions={shuffledQuestions}
         userAnswers={userAnswers}
