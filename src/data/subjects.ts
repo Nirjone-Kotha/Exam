@@ -243,8 +243,16 @@ export const SUBJECTS_DATA: Subject[] = [
   }
 ];
 
-export function getSubjectBySlug(slug: string): Subject | undefined {
-  return SUBJECTS_DATA.find((s) => s.slug.toLowerCase() === slug.toLowerCase() || s.id.toLowerCase() === slug.toLowerCase());
+export function getSubjectBySlug(slug?: string): Subject | undefined {
+  if (!slug) return undefined;
+  const target = slug.toLowerCase().trim();
+  return SUBJECTS_DATA.find(
+    (s) =>
+      s.slug.toLowerCase() === target ||
+      s.id.toLowerCase() === target ||
+      s.slug.toLowerCase().replace(/[-_]/g, "") === target.replace(/[-_]/g, "") ||
+      s.id.toLowerCase().replace(/[-_]/g, "") === target.replace(/[-_]/g, "")
+  );
 }
 
 export function getExamById(examId: string): { exam: Exam; subject: Subject } | undefined {

@@ -37,7 +37,8 @@ import {
 
 export default function SubjectImportantNotesPage() {
   const params = useParams();
-  const slug = params.slug as string;
+  const rawSlug = (params?.subjectSlug as string) || (params?.slug as string) || "";
+  const slug = decodeURIComponent(rawSlug);
   const subject = getSubjectBySlug(slug);
 
   // Form State (3 Columns)
