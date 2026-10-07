@@ -11,6 +11,7 @@ import { PHARMACOLOGY_BCS_QUESTIONS } from "./questions/pharmacology-bcs";
 import { PHYSIOLOGY_BCS_QUESTIONS } from "./questions/physiology-bcs";
 import { SURGERY_BCS_QUESTIONS } from "./questions/surgery-bcs";
 import { HISTOLOGY_BCS_QUESTIONS } from "./questions/histology-bcs";
+import { HISTOLOGY_BOOK_2_QUESTIONS } from "./questions/histology-book-2";
 
 export const SUBJECTS_DATA: Subject[] = [
   {
@@ -238,6 +239,15 @@ export const SUBJECTS_DATA: Subject[] = [
         description: "Authentic Previous Special BCS and residency microscopic anatomy and embryology questions with comprehensive explanations.",
         negativeMark: 0.5,
         questions: HISTOLOGY_BCS_QUESTIONS
+      },
+      {
+        id: "histology-book-2",
+        title: "Question from book 2",
+        subjectId: "histology",
+        subjectName: "Histology and Embryology",
+        description: "Comprehensive high-yield questions formulated from Histology and Embryology Book 2 with examiner tricks, embryological anomalies, and microscopic anatomy rationales for 51st BCS.",
+        negativeMark: 0.5,
+        questions: HISTOLOGY_BOOK_2_QUESTIONS
       }
     ]
   }
