@@ -2,43 +2,43 @@ import { Question } from "../../lib/types";
 
 // ============================================================================
 // Histology and Embryology - Question from book 2
-// Specially formulated for 51st Special BCS and Residency Medical Preparation
+// Formatted strictly in Authentic BPSC Special BCS Straightforward MCQ Style
 // Source: Comprehensive Medical & Special BCS Review Digest (Book 2)
-// Incorporating authentic previous Special BCS questions (39th, 42nd, 48th BCS)
+// Covering high-yield facts, percentages, tables, and past BCS trends (39th, 42nd, 48th, 51st BCS)
 // ============================================================================
 
 export const HISTOLOGY_BOOK_2_QUESTIONS: Question[] = [
   {
     "id": "histo-b2-1",
-    "question": "According to the biochemical composition of the human plasma membrane, what is the correct percentage distribution of proteins, lipids, and carbohydrates?",
+    "question": "Percentage of protein in human plasma membrane is approximately:",
     "options": [
-      "Protein 55%, Lipids 42% (Phospholipids 25%, Cholesterol 13%), Carbohydrates/Oligosaccharides 3%",
-      "Protein 42%, Lipids 55% (Phospholipids 35%, Cholesterol 20%), Carbohydrates 3%",
-      "Protein 60%, Lipids 30%, Carbohydrates 10%",
-      "Protein 50%, Lipids 45%, Carbohydrates 5%"
+      "55%",
+      "42%",
+      "25%",
+      "13%"
     ],
     "correctAnswer": 0,
-    "explanation": "As documented in Genesis BCS Review Digest (Section 1): Cell membrane composition is Protein 55%, Total Lipids 42% (consisting of Phospholipids 25%, Cholesterol 13%, and other lipids 4%), and Oligosaccharides/Carbohydrates 3%. Integral proteins act as cell adhesion molecules, pumps, carriers, ion channels, enzymes, and receptors.",
+    "explanation": "Cell membrane composition: Protein 55%, Total Lipids 42% (Phospholipids 25%, Cholesterol 13%, other lipids 4%), and Carbohydrates/Oligosaccharides 3%. Integral proteins serve as channels, carriers, receptors, and enzymes.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-2",
-    "question": "Which of the following cellular organelles is classified as NON-membranous?",
+    "question": "Which of the following is a non-membranous cell organelle?",
     "options": [
-      "Ribosome, Centrosome, and Cytoskeleton (microtubules & microfilaments)",
-      "Mitochondria and Lysosome",
-      "Endoplasmic Reticulum and Peroxisome",
-      "Golgi complex and Endosome"
+      "Ribosome",
+      "Mitochondria",
+      "Lysosome",
+      "Peroxisome"
     ],
     "correctAnswer": 0,
-    "explanation": "Organelles are categorized into: (1) Membranous: Mitochondria, Endoplasmic reticulum (SER and RER), Golgi complex, Lysosomes, and Peroxisomes; (2) Non-membranous: Ribosomes, Centrosome/centrioles, Proteasomes, and Cytoskeletal elements (Microfilaments, Intermediate filaments, Microtubules).",
+    "explanation": "Non-membranous organelles: Ribosomes, Centrosomes/centrioles, Proteasomes, and Cytoskeletal filaments (Microtubules, Microfilaments). Membranous organelles include Mitochondria, ER, Golgi apparatus, Lysosomes, and Peroxisomes.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-3",
-    "question": "The structural repeating unit of nuclear chromatin, consisting of a DNA segment wound around an octamer of basic histone proteins, is called:",
+    "question": "The structural repeating unit of chromatin is:",
     "options": [
       "Nucleosome",
       "Centromere",
@@ -46,153 +46,167 @@ export const HISTOLOGY_BOOK_2_QUESTIONS: Question[] = [
       "Telomere"
     ],
     "correctAnswer": 0,
-    "explanation": "In the nucleus, chromatin consists of double-stranded DNA coiled around a core octamer of basic histone proteins (H2A, H2B, H3, H4 pairs) sealed by histone H1. The fundamental structural repeating unit is the nucleosome ('beads on a string'). Chromatin is uncoiled and active in interphase, while chromosomes represent condensed, coiled structures during division.",
+    "explanation": "A nucleosome consists of double-stranded DNA coiled around an octamer core of basic histone proteins (pairs of H2A, H2B, H3, H4) sealed by histone H1. Chromatin is uncoiled during interphase and condenses into chromosomes during cell division.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-4",
-    "question": "Which cellular organelle is responsible for synthesizing the acrosome of spermatozoa and packaging acid hydrolases for lysosomes?",
+    "question": "Acrosome of spermatozoon is formed by which organelle?",
     "options": [
-      "Golgi complex",
+      "Golgi apparatus",
       "Rough endoplasmic reticulum",
       "Mitochondria",
-      "Smooth endoplasmic reticulum"
+      "Nucleolus"
     ],
     "correctAnswer": 0,
-    "explanation": "Golgi apparatus/complex functions include: (1) Glycosylation, sulfation, and post-translational modification of proteins; (2) Packaging enzymes for primary lysosomes; (3) Packaging secretory granules for exocytosis; (4) Formation of the acrosomal cap in developing spermatids; (5) Recycling cell membrane components.",
+    "explanation": "Golgi apparatus functions: (1) Post-translational modification of proteins; (2) Packaging of enzymes for lysosomes; (3) Packaging secretory granules; (4) Formation of the acrosomal cap in spermatids.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-5",
-    "question": "Smooth endoplasmic reticulum (SER) is extensively developed and predominantly functional in which of the following cell types?",
+    "question": "Smooth endoplasmic reticulum (SER) is primarily involved in the synthesis of:",
     "options": [
-      "Steroid-synthesizing cells (adrenal cortex, Leydig cells) and skeletal myocytes (sarcoplasmic reticulum)",
-      "Pancreatic acinar cells secreting digestive enzymes",
-      "Plasma cells synthesizing immunoglobulins",
-      "Fibroblasts synthesizing procollagen"
+      "Lipids and steroids",
+      "Proteins for export",
+      "Lysosomal enzymes",
+      "Nucleic acids"
     ],
     "correctAnswer": 0,
-    "explanation": "Smooth Endoplasmic Reticulum (SER) is agranular and specializes in lipid and steroid hormone synthesis (adrenal cortex, Leydig cells, corpus luteum), hepatic detoxification of drugs and bilirubin via cytochrome P450, glycogen metabolism, and calcium storage/release (sarcoplasmic reticulum in muscle). Protein-secreting cells (plasma cells, pancreatic acinar cells) are rich in RER.",
+    "explanation": "Smooth Endoplasmic Reticulum (SER) is abundant in steroid-producing cells (adrenal cortex, Leydig cells) and liver cells (drug detoxification via cytochrome P450, glycogen breakdown). In muscle, it forms sarcoplasmic reticulum for calcium storage.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-6",
-    "question": "Which of the following metabolic pathways and enzyme systems is located specifically in the INNER mitochondrial membrane?",
+    "question": "The electron transport chain (respiratory chain) is located in the:",
     "options": [
-      "Electron transport chain (respiratory chain) and ATP synthase",
-      "Enzymes of the citric acid (Krebs) cycle and beta-oxidation",
-      "Glycolytic enzymes and fatty acid synthesis",
-      "Urea cycle and gluconeogenesis enzymes"
+      "Inner mitochondrial membrane",
+      "Mitochondrial matrix",
+      "Outer mitochondrial membrane",
+      "Intermembrane space"
     ],
     "correctAnswer": 0,
-    "explanation": "Mitochondrial architecture: Inner membrane contains the electron transport chain complexes (I-IV), ATP synthase, and cardiolipin, responsible for oxidative phosphorylation. The mitochondrial matrix houses the Citric Acid (Krebs) cycle enzymes, pyruvate dehydrogenase, and beta-oxidation enzymes. Mitochondria also play a key role in intrinsic apoptosis via Cytochrome c release.",
+    "explanation": "Inner mitochondrial membrane contains the electron transport chain complexes (I-IV) and ATP synthase (oxidative phosphorylation). The mitochondrial matrix houses the Citric Acid (Krebs) cycle and beta-oxidation enzymes.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-7",
-    "question": "What is the primary difference in destination between proteins synthesized by FREE ribosomes versus RER-BOUND ribosomes?",
+    "question": "Enzymes of the citric acid (Krebs) cycle are located in the:",
     "options": [
-      "Free ribosomes synthesize intracytoplasmic/intracellular proteins; RER ribosomes synthesize secretory, lysosomal, and membrane proteins",
-      "Free ribosomes synthesize exportable secretory proteins; RER ribosomes synthesize mitochondrial enzymes",
-      "Free ribosomes synthesize nuclear histones only; RER ribosomes synthesize cytoskeletal proteins",
-      "There is no difference in protein destination"
+      "Mitochondrial matrix",
+      "Inner mitochondrial membrane",
+      "Outer mitochondrial membrane",
+      "Cytoplasm"
     ],
     "correctAnswer": 0,
-    "explanation": "Free ribosomes (polysomes in cytoplasm) synthesize proteins retained within the cell (e.g., hemoglobin in erythroblasts, enzymes of glycolysis, cytoskeletal proteins, peroxisomal and mitochondrial proteins). In contrast, ribosomes bound to RER synthesize secretory proteins (exportable), integral plasma membrane proteins, and lysosomal enzymes.",
+    "explanation": "The mitochondrial matrix contains the soluble enzymes of the citric acid (Krebs / TCA) cycle, pyruvate dehydrogenase complex, and beta-oxidation enzymes. Mitochondrial DNA is maternally inherited.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-8",
-    "question": "In the human cell cycle, replication of genomic DNA and duplication of centrosomes take place during which specific phase?",
+    "question": "Proteins destined for secretion (exportable proteins) are synthesized on:",
     "options": [
-      "S phase (Synthesis phase)",
-      "G1 phase (Gap 1)",
-      "G2 phase (Gap 2)",
-      "M phase (Mitosis)"
+      "Ribosomes on rough ER",
+      "Free polysomes",
+      "Smooth ER",
+      "Golgi cisternae"
     ],
     "correctAnswer": 0,
-    "explanation": "The typical human cell cycle lasts 24–36 hours: (1) G1 phase: cell growth, RNA, and protein synthesis; (2) S phase (Synthesis): DNA replication occurs, doubling DNA content from 2n (2C) to 2n (4C), alongside centrosome duplication; (3) G2 phase: synthesis of tubulin and mitotic apparatus, DNA damage checkpoint; (4) M phase: mitosis and cytokinesis.",
+    "explanation": "Ribosomes attached to Rough Endoplasmic Reticulum (RER) synthesize secretory proteins, integral plasma membrane proteins, and lysosomal acid hydrolases. Free ribosomes in cytoplasm synthesize intracellular proteins.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-9",
-    "question": "Regarding differences between DNA and RNA [42nd BCS], which of the following statements is correct?",
+    "question": "In the human cell cycle, replication of DNA occurs during:",
     "options": [
-      "99% of cellular DNA is located in the nucleus (1% in mitochondria), whereas 99% of RNA is localized in the cytoplasm",
-      "DNA is single-stranded while RNA is always double-stranded",
-      "DNA contains ribose sugar while RNA contains deoxyribose",
-      "DNA contains uracil while RNA contains thymine"
+      "S phase",
+      "G1 phase",
+      "G2 phase",
+      "M phase"
     ],
     "correctAnswer": 0,
-    "explanation": "As highlighted in the 42nd BCS syllabus notes: DNA is double-stranded with deoxyribose and thymine (A-T, G-C), located ~99% in nuclear chromosomes and ~1% in mitochondria (maternal inheritance). RNA is single-stranded with ribose and uracil (A-U, G-C), with ~99% in the cytoplasm (rRNA, tRNA, mRNA) and ~1% in the nucleolus/nucleus.",
+    "explanation": "Cell cycle phases: (1) G1 phase (growth and RNA/protein synthesis); (2) S phase (DNA replication doubling DNA content from 2C to 4C, centrosome duplication); (3) G2 phase (pre-mitotic synthesis of tubulin); (4) M phase (mitosis).",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-10",
-    "question": "During Meiosis I, the pairing of homologous chromosomes (synapsis) and chiasma formation with genetic crossing-over occur during which sub-stage of Prophase I? [42nd BCS]",
+    "question": "DNA differs from RNA because DNA contains: [42nd BCS]",
     "options": [
-      "Pachytene",
-      "Leptotene",
-      "Zygotene",
-      "Diakinesis"
+      "Deoxyribose and thymine",
+      "Ribose and uracil",
+      "Deoxyribose and uracil",
+      "Ribose and thymine"
     ],
     "correctAnswer": 0,
-    "explanation": "Prophase I of Meiosis (crucial 42nd BCS topic) stages mnemonic 'Lazy Zebras Ponder Dearly Daily': Leptotene (chromatin condenses); Zygotene (synapsis begins, synaptonemal complex forms); Pachytene (crossing over occurs between non-sister chromatids with chiasmata formation); Diplotene (chiasmata visible, prolonged arrest in female oocytes); Diakinesis (nuclear envelope breaks down).",
+    "explanation": "42nd BCS question: DNA is double-stranded, contains deoxyribose sugar and thymine (A-T, G-C), with ~99% in nucleus and ~1% in mitochondria. RNA is single-stranded, contains ribose and uracil (A-U, G-C), with ~99% in cytoplasm.",
     "subject": "Histology and Embryology",
     "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-11",
-    "question": "The axoneme (internal core) of a motile cilium exhibits which characteristic arrangement of microtubules? [39th BCS]",
+    "question": "Synapsis and crossing over occur during which stage of meiosis? [42nd BCS]",
     "options": [
-      "9 peripheral doublets and 2 central singlets (9+2 pattern)",
-      "9 peripheral triplets with no central tubules (9+0 pattern)",
-      "9 peripheral singlets and 1 central doublet (9+1 pattern)",
-      "6 peripheral doublets and 3 central singlets"
+      "Pachytene",
+      "Zygotene",
+      "Leptotene",
+      "Diplotene"
     ],
     "correctAnswer": 0,
-    "explanation": "Motile cilia (found in respiratory tract, fallopian tube, ependyma) possess an axoneme with a 9+2 arrangement (9 doublets of microtubules surrounding 2 central singlets) powered by dynein ATPase arms. In contrast, centrioles and basal bodies have a 9+0 triplet microtubule arrangement without central singlets.",
+    "explanation": "42nd BCS highlight: Prophase I of meiosis: Leptotene (condensation); Zygotene (synapsis begins); Pachytene (crossing over between homologous chromosomes with chiasmata); Diplotene (chiasmata visible, prolonged arrest in oocytes); Diakinesis.",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Cell Biology & Organelles"
   },
   {
     "id": "histo-b2-12",
-    "question": "Stereocilia are non-motile, long, branched microvilli containing a core of actin microfilaments. Where are they characteristically located?",
+    "question": "Microtubule arrangement in the axoneme of a motile cilium is: [39th BCS]",
     "options": [
-      "Epididymis (ductus epididymidis) and sensory hair cells of the internal ear",
-      "Trachea and bronchi",
-      "Fallopian tubes and uterus",
-      "Proximal convoluted tubule of kidney"
+      "9 + 2",
+      "9 + 0",
+      "9 + 1",
+      "9 + 3"
     ],
     "correctAnswer": 0,
-    "explanation": "Stereocilia are not true cilia; they are extremely long, non-motile specialized microvilli with actin microfilament cores. Their only physiological locations in the human body are: (1) Lining epithelium of the epididymis and ductus deferens (facilitating sperm maturation and fluid absorption); (2) Hair cells of the maculae and cristae of the inner ear (mechanoreceptors for hearing and balance).",
+    "explanation": "39th BCS question: Motile cilia have an axoneme of 9 peripheral doublets and 2 central singlet microtubules (9+2 pattern) with dynein arms. Centrioles and basal bodies have 9 triplets without central singlets (9+0 pattern).",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-13",
-    "question": "Which type of intercellular junction creates an impermeable barrier against paracellular transport and maintains epithelial cell polarity?",
+    "question": "Stereocilia are characteristically present in the:",
+    "options": [
+      "Epididymis",
+      "Trachea",
+      "Fallopian tube",
+      "Small intestine"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Stereocilia are extremely long, non-motile specialized microvilli containing an actin core. They occur only in: (1) Epididymis and ductus deferens (absorptive function); (2) Sensory hair cells of the inner ear (mechanoreceptors).",
+    "subject": "Histology and Embryology",
+    "topic": "Epithelial Tissue"
+  },
+  {
+    "id": "histo-b2-14",
+    "question": "Which intercellular junction forms an impermeable barrier to paracellular flow?",
     "options": [
       "Zonula occludens (Tight junction)",
-      "Zonula adherens (Adherens junction)",
+      "Zonula adherens",
       "Macula adherens (Desmosome)",
       "Nexus (Gap junction)"
     ],
     "correctAnswer": 0,
-    "explanation": "Zonula occludens (Tight junctions) are formed by transmembrane proteins (claudins, occludins) that seal adjacent plasma membranes together at the apical cell boundary. They prevent paracellular flow of water, ions, and macromolecules and establish apical-basolateral cell membrane polarity. Gap junctions (nexus), by contrast, allow direct ionic/electrical communication via connexons.",
+    "explanation": "Zonula occludens (Tight junction) seals adjacent cell membranes near the apical border via claudins and occludins, preventing paracellular diffusion. Gap junctions permit ionic communication; Desmosomes provide mechanical anchorage.",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Epithelial Tissue"
   },
   {
-    "id": "histo-b2-14",
-    "question": "Which intermediate filament protein is characteristically expressed in all epithelial cells and constitutes tonofilaments anchored to desmosomes?",
+    "id": "histo-b2-15",
+    "question": "Intermediate filament characteristically found in epithelial cells is:",
     "options": [
       "Cytokeratin",
       "Vimentin",
@@ -200,643 +214,727 @@ export const HISTOLOGY_BOOK_2_QUESTIONS: Question[] = [
       "Neurofilament"
     ],
     "correctAnswer": 0,
-    "explanation": "Diagnostic markers of intermediate filaments: (1) Cytokeratin — present in all Epithelial cells; (2) Vimentin — Mesenchymal cells (fibroblasts, endothelial cells, chondrocytes); (3) Desmin — Muscle cells (smooth, skeletal, cardiac); (4) Neurofilaments — Neurons; (5) Glial fibrillary acidic protein (GFAP) — Astrocytes.",
+    "explanation": "Diagnostic intermediate filament markers: Cytokeratin in Epithelial cells; Vimentin in Mesenchymal cells; Desmin in Muscle cells; Neurofilament in Neurons; GFAP in Astrocytes.",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
-  },
-  {
-    "id": "histo-b2-15",
-    "question": "According to the systematic review of lining epithelia in the alimentary tract, which lining is found from the pectinate line to the white line of Hilton in the anal canal?",
-    "options": [
-      "Non-keratinized stratified squamous epithelium",
-      "Simple columnar epithelium",
-      "Keratinized stratified squamous epithelium (true skin)",
-      "Transitional epithelium"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Lining of the Anal canal (high-yield BCS anatomy/histology question): (1) Upper part (above pectinate line): Simple columnar epithelium (endodermal, supplied by superior rectal artery/portal system); (2) Middle part (between pectinate line and white line of Hilton / anocutaneous line): Non-keratinized stratified squamous epithelium (pecten); (3) Lower part (below white line): Keratinized stratified squamous epithelium / true skin with hair follicles and sweat glands.",
-    "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-16",
-    "question": "Endothelium lining blood vessels and endocardium, and Mesothelium lining pericardial, pleural, and peritoneal cavities, are both classified histologically as: [39th BCS]",
+    "question": "Anal canal between pectinate line and white line of Hilton is lined by:",
+    "options": [
+      "Non-keratinized stratified squamous epithelium",
+      "Simple columnar epithelium",
+      "Keratinized stratified squamous epithelium",
+      "Transitional epithelium"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Anal canal lining: Above pectinate line = Simple columnar epithelium; Between pectinate line and white line of Hilton = Non-keratinized stratified squamous epithelium (pecten); Below white line = Keratinized stratified squamous epithelium (true skin).",
+    "subject": "Histology and Embryology",
+    "topic": "Epithelial Tissue"
+  },
+  {
+    "id": "histo-b2-17",
+    "question": "Endothelium of blood vessels is which type of epithelium? [39th BCS]",
     "options": [
       "Simple squamous epithelium",
       "Simple cuboidal epithelium",
       "Simple columnar epithelium",
-      "Stratified squamous non-keratinized epithelium"
+      "Stratified squamous epithelium"
     ],
     "correctAnswer": 0,
-    "explanation": "Repeated BCS exam highlight [39th BCS]: Both Endothelium (lining vascular lumens, cardiac chambers, and lymphatics) and Mesothelium (lining the major closed serous body cavities — pericardium, pleura, peritoneum) are histologically Simple Squamous Epithelium. They provide a frictionless surface and facilitate active gas and fluid exchange.",
+    "explanation": "39th BCS repeated question: Endothelium (lining vascular and lymphatic lumens) and Mesothelium (lining pleural, pericardial, and peritoneal cavities) are both Simple Squamous Epithelium.",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
-  },
-  {
-    "id": "histo-b2-17",
-    "question": "Which of the following segments of the human respiratory tree is the LAST to contain goblet cells and cartilage?",
-    "options": [
-      "Terminal bronchioles lack both goblet cells and cartilage; cartilage ends in bronchi while goblet cells terminate in terminal bronchioles",
-      "Trachea lacks cartilage but has goblet cells",
-      "Alveolar ducts contain abundant cartilage",
-      "Respiratory bronchioles have cartilage plates"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Respiratory tree histological transition: Cartilage plates diminish along intrapulmonary bronchi and completely disappear at the start of bronchioles (diameter < 1 mm). Goblet cells are present down to terminal bronchioles but are absent in respiratory bronchioles and alveoli to prevent mucinous airway obstruction. Clara (Club) cells replace goblet cells in bronchioles.",
-    "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-18",
-    "question": "Which lining epithelium is correctly matched with its anatomical organ?",
+    "question": "Mesothelium lining pericardium, pleura, and peritoneum is:",
     "options": [
-      "Gallbladder mucosa — Simple columnar epithelium with microvilli (striated border), devoid of goblet cells",
-      "Vagina — Pseudostratified ciliated columnar epithelium",
-      "Fallopian tube — Stratified squamous non-keratinized epithelium",
-      "Thyroid follicles — Transitional epithelium"
+      "Simple squamous epithelium",
+      "Simple cuboidal epithelium",
+      "Simple columnar epithelium",
+      "Transitional epithelium"
     ],
     "correctAnswer": 0,
-    "explanation": "Gallbladder mucosa is lined by Simple Columnar Epithelium with prominent apical microvilli for water absorption, forming branched mucosal folds. Crucially, normal gallbladder epithelium contains NO goblet cells. The vagina is lined by non-keratinized stratified squamous; fallopian tubes by simple ciliated columnar; thyroid follicles by simple cuboidal epithelium.",
+    "explanation": "Mesothelium is the simple squamous epithelium that lines the closed serous body cavities (peritoneal, pleural, and pericardial sacs). It secretes lubricating serous fluid.",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-19",
-    "question": "What is the specific epithelial lining of the male prostatic urethra versus the penile (spongy) urethra?",
+    "question": "Cartilage plates and goblet cells in the respiratory tree disappear at the level of:",
     "options": [
-      "Prostatic urethra: Transitional epithelium (urothelium); Penile urethra: Stratified/pseudostratified columnar becoming stratified squamous at fossa navicularis",
-      "Prostatic urethra: Simple cuboidal; Penile urethra: Transitional",
-      "Prostatic urethra: Simple columnar; Penile urethra: Keratinized stratified squamous",
-      "Both are entirely lined by simple squamous epithelium"
+      "Terminal bronchioles",
+      "Trachea",
+      "Primary bronchi",
+      "Lobar bronchi"
     ],
     "correctAnswer": 0,
-    "explanation": "Male urethral lining transitions: (1) Prostatic urethra: Transitional epithelium (urothelium, continuous with urinary bladder); (2) Membranous urethra: Pseudostratified or stratified columnar; (3) Spongy/penile urethra: Pseudostratified columnar with patchy stratified columnar; (4) Fossa navicularis: Non-keratinized stratified squamous epithelium; (5) External meatus: Keratinized stratified squamous epithelium.",
+    "explanation": "Cartilage disappears at the start of bronchioles (airways < 1 mm). Goblet cells extend down to terminal bronchioles but are absent in respiratory bronchioles to prevent mucous plugging. Clara (Club) cells appear in bronchioles.",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-20",
-    "question": "Myoepithelial cells are specialized cells of epithelial origin possessing contractile actin-myosin filaments. Where are they physiologically situated? [42nd BCS]",
+    "question": "Mucosa of the gallbladder is lined by:",
     "options": [
-      "Between epithelial secretory cells and the basal lamina of salivary, mammary, and sweat glands",
-      "In the tunica media of muscular arteries",
-      "In the muscularis mucosae of the stomach",
-      "In the renal glomerulus"
+      "Simple columnar epithelium without goblet cells",
+      "Simple columnar epithelium with goblet cells",
+      "Stratified squamous epithelium",
+      "Transitional epithelium"
     ],
     "correctAnswer": 0,
-    "explanation": "42nd BCS question: Myoepithelial cells (basket cells) originate from ectoderm and reside between the secretory epithelial cells and the underlying basement membrane of exocrine acini and ducts (mammary glands, sweat glands, salivary glands, lacrimal glands). Upon neural or oxytocin stimulation, they contract to expel secretory products into ducts.",
+    "explanation": "Gallbladder mucosa is lined by Simple Columnar Epithelium with apical microvilli for fluid absorption. A normal gallbladder contains NO goblet cells. Stratified squamous lines the esophagus; transitional lines urinary tract.",
     "subject": "Histology and Embryology",
-    "topic": "Epithelial Tissue & Cell Specializations"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-21",
-    "question": "Which of the following glands discharges its secretion by the HOLOCRINE mode (complete disintegration of the secretory cell)?",
+    "question": "Prostatic urethra is lined by:",
     "options": [
-      "Sebaceous gland and Meibomian gland of the eyelid",
-      "Parotid salivary gland and pancreas (merocrine)",
-      "Lactating mammary gland (apocrine)",
-      "Thyroid gland"
+      "Transitional epithelium",
+      "Simple columnar epithelium",
+      "Keratinized stratified squamous",
+      "Pseudostratified ciliated columnar"
     ],
     "correctAnswer": 0,
-    "explanation": "Modes of glandular secretion: (1) Merocrine (Eccrine): Exocytosis without loss of cytoplasm (parotid, pancreas, eccrine sweat glands); (2) Apocrine: Apical cytoplasm is pinched off with the secretion (mammary glands, ceruminous glands, axillary sweat glands); (3) Holocrine: The entire secretory cell ruptures and disintegrates (sebaceous glands of skin, tarsal/Meibomian glands of eyelids).",
+    "explanation": "Male urethra: Prostatic urethra is lined by Transitional epithelium (urothelium); Membranous and penile urethra are lined by Pseudostratified/stratified columnar; Fossa navicularis by Non-keratinized stratified squamous.",
     "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-22",
-    "question": "Which group consists entirely of MIXED (seromucous / endocrine-exocrine) glands in the human body? [48th BCS]",
+    "question": "Myoepithelial cells are located: [42nd BCS]",
     "options": [
-      "Pancreas, submandibular gland, sublingual gland, and Liver",
-      "Parotid gland, lacrimal gland, and sweat gland",
-      "Sebaceous gland, thyroid gland, and adrenal cortex",
-      "Pituitary gland, pineal gland, and thymus"
+      "Between secretory epithelial cells and basal lamina",
+      "In tunica media of arteries",
+      "In muscularis mucosae of gut",
+      "In renal glomerulus"
     ],
     "correctAnswer": 0,
-    "explanation": "As classified in BCS notes [48th BCS]: Mixed glands exhibit dual functions (either serous & mucous acini, or exocrine & endocrine components). These include: Pancreas (exocrine acini + endocrine Islets of Langerhans), Submandibular gland (mixed serous-predominant acini), Sublingual gland (mixed mucous-predominant acini), and Liver (largest mixed gland, bile exocrine + albumin/coagulation factor endocrine secretion).",
+    "explanation": "42nd BCS question: Myoepithelial cells are ectodermal contractile cells located between epithelial cells and the basement membrane of salivary, mammary, lacrimal, and sweat gland acini. They contract to expel secretions.",
     "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
+    "topic": "Epithelial Tissue"
   },
   {
     "id": "histo-b2-23",
-    "question": "Which of the following anatomic structures is an entirely AVASCULAR tissue in the healthy human body? [42nd BCS]",
+    "question": "Sebaceous gland secretes by which mode?",
     "options": [
-      "Cornea, Lens of the eye, Articular cartilage, and Epidermis of skin",
-      "Dermis of skin, Spleen, and Bone",
-      "Adrenal gland, Thyroid gland, and Kidney cortex",
-      "Skeletal muscle, Liver, and Tongue"
+      "Holocrine",
+      "Merocrine",
+      "Apocrine",
+      "Eccrine"
     ],
     "correctAnswer": 0,
-    "explanation": "42nd BCS high-yield question: Truly avascular tissues depend on diffusion from adjacent fluids/vessels for nourishment. Classic list: (1) Cornea (nourished by aqueous humor and tear film); (2) Lens of the eye; (3) Articular and epiphyseal cartilages (nourished by synovial fluid); (4) Enamel of teeth; (5) Epithelial sheets (including Epidermis of skin); (6) Heart valves (mostly avascular).",
+    "explanation": "Modes of glandular secretion: (1) Holocrine: Whole secretory cell disintegrates (sebaceous glands, Meibomian glands); (2) Merocrine: Exocytosis without cell loss (pancreas, parotid); (3) Apocrine: Apical cytoplasm shed (mammary glands).",
     "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
+    "topic": "Glands & Connective Tissue"
   },
   {
     "id": "histo-b2-24",
-    "question": "Unlike other primary tissues which consist predominantly of cells, Connective Tissue is characterized by having its major constituent as: [39th BCS]",
+    "question": "Which of the following is a mixed (seromucous/endocrine-exocrine) gland? [48th BCS]",
     "options": [
-      "Extracellular matrix (protein fibers + ground substance)",
-      "High density of tightly joined cells with desmosomes",
-      "A completely avascular cellular sheet",
-      "Excitable electrical syncytium"
+      "Pancreas",
+      "Parotid gland",
+      "Sebaceous gland",
+      "Lacrimal gland"
     ],
     "correctAnswer": 0,
-    "explanation": "39th BCS key distinction: Connective tissue is fundamentally characterized by an abundant Extracellular Matrix (ECM) separating widely spaced cells. ECM consists of ground substance (glycosaminoglycans like hyaluronic acid, proteoglycans, multiadhesive glycoproteins) and protein fibers (collagen, elastic, reticular). Connective tissues possess both rich blood and nerve supplies (except cartilage).",
+    "explanation": "48th BCS classification: Mixed glands have dual components. Pancreas (exocrine acini + endocrine islets), Submandibular (serous + mucous), Sublingual (mucous + serous), and Liver (exocrine bile + endocrine proteins). Parotid is purely serous.",
     "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
+    "topic": "Glands & Connective Tissue"
   },
   {
     "id": "histo-b2-25",
-    "question": "Which cell of Connective Tissue proper is a 'fixed cell' derived from undifferentiated mesenchymal stem cells and represents the primary factory for collagen and ground substance synthesis?",
+    "question": "Largest mixed gland in the human body is: [48th BCS]",
+    "options": [
+      "Liver",
+      "Pancreas",
+      "Submandibular gland",
+      "Thyroid gland"
+    ],
+    "correctAnswer": 0,
+    "explanation": "48th BCS highlight: The Liver is the largest gland (and largest mixed gland) in the body (~1.5 kg), performing both exocrine (bile) and endocrine (albumin, clotting factors, thrombopoietin) functions.",
+    "subject": "Histology and Embryology",
+    "topic": "Glands & Connective Tissue"
+  },
+  {
+    "id": "histo-b2-26",
+    "question": "Which of the following is an avascular structure in the human body? [42nd BCS]",
+    "options": [
+      "Cornea",
+      "Dermis of skin",
+      "Bone",
+      "Thyroid gland"
+    ],
+    "correctAnswer": 0,
+    "explanation": "42nd BCS question: Avascular structures: Cornea, Lens of eye, Articular cartilage, Epiphyseal growth plate cartilage, Enamel of teeth, and Epidermis of skin. They receive nutrition by diffusion from adjacent fluids/vessels.",
+    "subject": "Histology and Embryology",
+    "topic": "Glands & Connective Tissue"
+  },
+  {
+    "id": "histo-b2-27",
+    "question": "Major constituent of connective tissue is: [39th BCS]",
+    "options": [
+      "Extracellular matrix",
+      "Closely packed cells",
+      "Avascular cellular sheet",
+      "Keratin intermediate filaments"
+    ],
+    "correctAnswer": 0,
+    "explanation": "39th BCS key distinction: Unlike other tissues (epithelium, muscle, nerve) which consist predominantly of cells, connective tissue consists mainly of Extracellular Matrix (ECM) composed of ground substance and protein fibers.",
+    "subject": "Histology and Embryology",
+    "topic": "Glands & Connective Tissue"
+  },
+  {
+    "id": "histo-b2-28",
+    "question": "Primary cell responsible for synthesizing connective tissue fibers and ground substance is:",
     "options": [
       "Fibroblast",
       "Mast cell",
       "Plasma cell",
-      "Macrophage (histiocyte)"
+      "Macrophage"
     ],
     "correctAnswer": 0,
-    "explanation": "Connective tissue cells: (1) Fixed (intrinsic) cells: Fibroblasts/fibrocytes, Adipocytes (fat cells), Mesenchymal stem cells; (2) Wandering (transient / immigrant) cells: Macrophages (from monocytes), Mast cells, Plasma cells (from B-lymphocytes), Neutrophils, Eosinophils, and Lymphocytes. Fibroblasts synthesize procollagen, elastin, and glycosaminoglycans.",
+    "explanation": "Fibroblasts are the principal fixed cells of connective tissue. They synthesize procollagen, elastin, reticular fibers, and glycosaminoglycans/proteoglycans of the ground substance.",
     "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
-  },
-  {
-    "id": "histo-b2-26",
-    "question": "Plasma cells are differentiated B lymphocytes specialized for immunoglobulin synthesis. What are their two classic microscopic hallmarks?",
-    "options": [
-      "Eccentrically placed nucleus with 'cartwheel' (clock-face) chromatin and prominent pale perinuclear halo (negative Golgi image)",
-      "Centrally placed segmented nucleus with specific dark granules",
-      "Spindle-shaped cell with deeply indented cigar-shaped nucleus",
-      "Multi-nucleated giant cell with peripherally arranged nuclei"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Diagnostic histology of Plasma cells: Characterized by an ovoid shape, basophilic cytoplasm (due to abundant RER synthesizing antibodies), eccentric round nucleus with alternating heterochromatin/euchromatin resembling a 'cartwheel' or 'clock-face', and a pale perinuclear zone corresponding to a large, negative-staining Golgi complex.",
-    "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
-  },
-  {
-    "id": "histo-b2-27",
-    "question": "Reticular fibers that form the supportive stroma (framework) of liver sinusoids, spleen, lymph nodes, and bone marrow consist of which collagen type?",
-    "options": [
-      "Type III Collagen",
-      "Type I Collagen",
-      "Type II Collagen",
-      "Type IV Collagen"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Reticular fibers (argyrophilic, black with silver impregnation) are composed of Type III Collagen. Summary of key Collagen types: Type I — 90% of body collagen (Bone, skin, tendon, dentin, fascia); Type II — Cartilage (hyaline & elastic), vitreous humor; Type III — Reticular fibers (blood vessels, uterus, lymphoid organs); Type IV — Basement membrane (basal lamina: 'Type IV in the floor').",
-    "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
-  },
-  {
-    "id": "histo-b2-28",
-    "question": "Which multiadhesive glycoprotein in the extracellular matrix binds cells to collagen fibers via cell-surface integrins?",
-    "options": [
-      "Fibronectin and Laminin",
-      "Heparin and Histamine",
-      "Hyaluronic acid and Chondroitin sulfate",
-      "Elastin and Fibrillin"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Fibronectin (in connective tissue matrix) and Laminin (in basal lamina) are multiadhesive glycoproteins with distinct binding domains for cell-surface integrins, collagen fibers, and proteoglycans. They mediate cell adhesion, migration, and structural anchorage to the ECM.",
-    "subject": "Histology and Embryology",
-    "topic": "Glands & Connective Tissue Proper"
+    "topic": "Glands & Connective Tissue"
   },
   {
     "id": "histo-b2-29",
-    "question": "Which of the following cartilages is an ELASTIC cartilage? [39th BCS]",
+    "question": "Clock-face (cartwheel) appearance of nuclear chromatin is diagnostic of:",
     "options": [
-      "Epiglottis, Auricle (pinna) of ear, and Corniculate and Cuneiform cartilages of larynx",
-      "Costal cartilage and thyroid cartilage",
-      "Pubic symphysis and intervertebral disc",
-      "Tracheal rings and articular cartilage of femur"
+      "Plasma cell",
+      "Mast cell",
+      "Macrophage",
+      "Fibroblast"
     ],
     "correctAnswer": 0,
-    "explanation": "Elastic cartilage list (repeated 39th BCS question) mnemonic '3Es and 2Cs': Epiglottis, External ear (auricle/pinna), External auditory meatus, Eustachian tube (cartilaginous part), Corniculate cartilage, and Cuneiform cartilage. Elastic cartilage possesses a perichondrium and NEVER calcifies with aging, unlike hyaline cartilage.",
+    "explanation": "Plasma cells (differentiated B cells synthesizing immunoglobulins) feature an eccentric nucleus with alternating heterochromatin blocks resembling a 'clock-face' or 'cartwheel', basophilic cytoplasm, and a negative Golgi image.",
     "subject": "Histology and Embryology",
-    "topic": "Cartilage, Bone & Joints"
+    "topic": "Glands & Connective Tissue"
   },
   {
     "id": "histo-b2-30",
-    "question": "Which of the following cartilaginous structures lacks a PERICHONDRIUM?",
+    "question": "Reticular fibers in lymphoid organs and liver sinusoids are composed of:",
     "options": [
-      "Articular cartilage of synovial joints and Fibrocartilage (intervertebral disc)",
-      "Costal cartilage and tracheal rings",
-      "Auricle of ear and epiglottis",
-      "Thyroid and cricoid cartilage"
+      "Type III collagen",
+      "Type I collagen",
+      "Type II collagen",
+      "Type IV collagen"
     ],
     "correctAnswer": 0,
-    "explanation": "Perichondrium covers hyaline cartilage (except articular surfaces) and elastic cartilage. Articular cartilage of synovial joints and all Fibrocartilages (intervertebral discs, pubic symphysis, menisci of knee, glenoid and acetabular labrum) LACK a perichondrium. Consequently, articular cartilage has virtually no capacity for regeneration when injured.",
+    "explanation": "Collagen summary: Type I = Bone, tendon, skin, dentin; Type II = Hyaline and elastic cartilage; Type III = Reticular fibers (argyrophilic framework in liver, spleen, lymph nodes); Type IV = Basement membrane (basal lamina).",
     "subject": "Histology and Embryology",
-    "topic": "Cartilage, Bone & Joints"
+    "topic": "Glands & Connective Tissue"
   },
   {
     "id": "histo-b2-31",
-    "question": "In a developing long bone, longitudinal growth in length occurs at which anatomical zone? [48th BCS]",
+    "question": "Collagen present in the basal lamina of basement membranes is:",
     "options": [
-      "Epiphyseal plate (growth plate / Physis)",
-      "Diaphysis (shaft)",
-      "Articular cartilage surface",
-      "Periosteum"
+      "Type IV collagen",
+      "Type I collagen",
+      "Type II collagen",
+      "Type III collagen"
     ],
     "correctAnswer": 0,
-    "explanation": "48th BCS long bone anatomy: Longitudinal bone growth occurs exclusively at the Epiphyseal plate (physis / growth plate) through endochondral ossification. In contrast, appositional growth (increase in bone diameter/thickness) occurs beneath the Periosteum via intramembranous ossification by osteoblasts.",
+    "explanation": "Mnemonic: 'Type IV under the floor' — Type IV collagen forms a meshwork in basal laminae of all basement membranes, associating with laminin, entactin/nidogen, and perlecan.",
     "subject": "Histology and Embryology",
-    "topic": "Cartilage, Bone & Joints"
+    "topic": "Glands & Connective Tissue"
   },
   {
     "id": "histo-b2-32",
-    "question": "Osteoclasts, the bone-resorbing multinucleated giant cells, are derived embryologically from which cellular lineage?",
+    "question": "Elastic cartilage is present in the: [39th BCS]",
     "options": [
-      "Monocyte-macrophage lineage of hematopoietic bone marrow",
-      "Osteoprogenitor mesenchymal cells",
-      "Osteoblasts",
-      "Pericytes of capillaries"
+      "Epiglottis",
+      "Costal cartilage",
+      "Tracheal rings",
+      "Articular cartilage"
     ],
     "correctAnswer": 0,
-    "explanation": "Osteoclasts are not derived from osteoprogenitor mesenchymal cells. Instead, they originate from the fusion of blood monocytes (hematopoietic granulocyte-macrophage colony-forming units, GM-CFU) in the mononuclear phagocyte system. They occupy resorption pits called Howship's lacunae and secrete acid and cathepsin K to demineralize bone.",
+    "explanation": "39th BCS question: Elastic cartilage is found in: Epiglottis, External ear (auricle/pinna), External acoustic meatus, Eustachian tube, Corniculate and Cuneiform cartilages. It contains elastin fibers and never calcifies.",
     "subject": "Histology and Embryology",
     "topic": "Cartilage, Bone & Joints"
   },
   {
     "id": "histo-b2-33",
-    "question": "The structural and functional microscopic unit of mature compact (cortical) bone is the:",
+    "question": "Perichondrium is ABSENT in:",
     "options": [
-      "Osteon (Haversian system)",
-      "Trabecular meshwork",
-      "Volkmann's canal",
-      "Interstitial lamella"
+      "Articular cartilage",
+      "Costal cartilage",
+      "Tracheal rings",
+      "Pinna of ear"
     ],
     "correctAnswer": 0,
-    "explanation": "The Osteon (Haversian system) is the cylindrical structural unit of compact bone. It consists of a central Haversian canal containing vessels and nerves, surrounded by 4–20 concentric lamellae of calcified bone matrix with osteocytes in lacunae connected by canaliculi. Volkmann's (perforating) canals run perpendicularly to connect Haversian canals with the periosteum.",
+    "explanation": "Perichondrium covers hyaline cartilage (except articular surfaces) and elastic cartilage. Articular cartilage of synovial joints and all Fibrocartilages (intervertebral disc, pubic symphysis) LACK a perichondrium.",
     "subject": "Histology and Embryology",
     "topic": "Cartilage, Bone & Joints"
   },
   {
     "id": "histo-b2-34",
-    "question": "Which of the following joints is classified as a SECONDARY CARTILAGINOUS JOINT (Symphysis)?",
+    "question": "Growth in length of a long bone occurs at the: [48th BCS]",
     "options": [
-      "Pubic symphysis, Intervertebral disc joints, and Manubriosternal joint",
-      "Epiphyseal plate between epiphysis and diaphysis (primary cartilaginous / synchondrosis)",
-      "Sutures of the skull (fibrous joint)",
-      "Knee joint and shoulder joint (synovial joint)"
+      "Epiphyseal plate (physis)",
+      "Diaphysis",
+      "Periosteum",
+      "Endosteum"
     ],
     "correctAnswer": 0,
-    "explanation": "Secondary cartilaginous joints (Symphyses) occur strictly in the median plane of the body and feature a fibrocartilaginous plate between bone surfaces covered by hyaline cartilage. They are permanent, slightly movable (amphiarthrosis): Pubic symphysis, Intervertebral discs, Manubriosternal joint, and Symphysis menti (fuses in infancy).",
+    "explanation": "48th BCS long bone anatomy: Longitudinal growth occurs at the Epiphyseal cartilage plate (physis) via endochondral ossification. Appositional growth in bone thickness/width occurs beneath the Periosteum.",
     "subject": "Histology and Embryology",
     "topic": "Cartilage, Bone & Joints"
   },
   {
     "id": "histo-b2-35",
-    "question": "The temporomandibular joint (TMJ), sternoclavicular joint, and acromioclavicular joint share which unique histological feature among synovial joints?",
+    "question": "Osteoclasts, the bone-resorbing cells, are derived from:",
     "options": [
-      "Their articular surfaces are covered by fibrocartilage instead of hyaline cartilage, and they contain an intra-articular fibrocartilaginous disc",
-      "They are primary synchondroses",
-      "They lack synovial fluid",
-      "Their articular capsules are ossified"
+      "Blood monocytes",
+      "Osteoprogenitor cells",
+      "Osteoblasts",
+      "Chondrocytes"
     ],
     "correctAnswer": 0,
-    "explanation": "Almost all synovial joints have articular surfaces lined by hyaline cartilage. However, joints that develop via intramembranous ossification (bones of skull, clavicle) have articular surfaces covered by Fibrocartilage: TMJ, Sternoclavicular joint, and Acromioclavicular joint. They also contain a complete or partial intra-articular fibrocartilaginous articular disc.",
+    "explanation": "Osteoclasts are multinucleated giant cells derived from the fusion of hematopoietic monocyte-macrophage precursors. They reside in Howship's lacunae and resorb bone by secreting hydrogen ions and cathepsin K.",
     "subject": "Histology and Embryology",
     "topic": "Cartilage, Bone & Joints"
   },
   {
     "id": "histo-b2-36",
-    "question": "Regarding smooth muscle histology [39th BCS], which of the following statements is correct?",
+    "question": "The structural unit of compact (cortical) bone is the:",
     "options": [
-      "Spindle-shaped cells with a single centrally located, cigar-shaped nucleus, lacking sarcomeric striations and T-tubules",
-      "Multinucleated cylindrical cells with peripherally located nuclei and sarcomeres",
-      "Branching fibers with intercalated discs and diad T-tubules",
-      "Non-contractile connective tissue cells"
+      "Osteon (Haversian system)",
+      "Osteocyte",
+      "Trabecular spicule",
+      "Volkmann canal"
     ],
     "correctAnswer": 0,
-    "explanation": "39th BCS smooth muscle points: Smooth muscle cells are fusiform/spindle-shaped with tapering ends, containing a single centrally placed, elongated ('cigar-shaped' or corkscrew when contracted) nucleus. They possess non-sarcomeric actin-myosin filaments anchored to dense bodies (alpha-actinin) and caveolae instead of T-tubules. They are involuntary and supplied by autonomic nerves.",
+    "explanation": "The Osteon (Haversian system) consists of a central Haversian canal containing neurovascular bundles surrounded by concentric lamellae with osteocytes in lacunae. Volkmann's canals connect Haversian canals to periosteum.",
     "subject": "Histology and Embryology",
-    "topic": "Muscle Tissue"
+    "topic": "Cartilage, Bone & Joints"
   },
   {
     "id": "histo-b2-37",
-    "question": "In cardiac muscle, the transverse tubular system (T-tubules) forms a 'DIAD' at which level of the sarcomere?",
+    "question": "Pubic symphysis is an example of which type of joint?",
     "options": [
-      "At the Z disc (Z line) with one terminal cistern of sarcoplasmic reticulum",
-      "At the A-I junction forming a triad with two terminal cisternae",
-      "At the M line of the H zone",
-      "Cardiac muscle lacks T-tubules entirely"
+      "Secondary cartilaginous joint (Symphysis)",
+      "Primary cartilaginous joint (Synchondrosis)",
+      "Fibrous suture",
+      "Synovial joint"
     ],
     "correctAnswer": 0,
-    "explanation": "Classic high-yield histology comparison: (1) Skeletal muscle: T-tubules are located at the A-I junction and form a TRIAD (one central T-tubule flanked by two terminal cisternae of the sarcoplasmic reticulum); (2) Cardiac muscle: T-tubules are wider, located at the Z DISC, and associate with a single terminal cistern of SR to form a DIAD.",
+    "explanation": "Secondary cartilaginous joints (Symphyses) occur in the median plane with a fibrocartilaginous disc between hyaline cartilage surfaces: Pubic symphysis, Intervertebral disc joints, and Manubriosternal joint.",
     "subject": "Histology and Embryology",
-    "topic": "Muscle Tissue"
+    "topic": "Cartilage, Bone & Joints"
   },
   {
     "id": "histo-b2-38",
-    "question": "Which component of the cardiac intercalated disc contains low-resistance ion channels (connexons) responsible for rapid electrical impulse transmission between cardiomyocytes?",
+    "question": "Articular surfaces of the temporomandibular joint (TMJ) are covered by:",
     "options": [
-      "Gap junctions (Nexus)",
-      "Fascia adherens",
-      "Macula adherens (Desmosomes)",
-      "Tight junctions"
+      "Fibrocartilage",
+      "Hyaline cartilage",
+      "Elastic cartilage",
+      "Synovial membrane"
     ],
     "correctAnswer": 0,
-    "explanation": "Intercalated discs link cardiomyocytes: Transverse component contains Fascia adherens (anchoring thin actin filaments of terminal sarcomeres) and Desmosomes (maculae adherentes, preventing cell separation during contraction). Longitudinal component contains Gap junctions (nexus), which provide low electrical resistance for ionic flow, allowing heart muscle to function as a coordinated functional syncytium.",
+    "explanation": "Bones ossifying in membrane (skull, clavicle) form synovial joints with articular surfaces covered by Fibrocartilage rather than hyaline cartilage: TMJ, Sternoclavicular joint, and Acromioclavicular joint.",
+    "subject": "Histology and Embryology",
+    "topic": "Cartilage, Bone & Joints"
+  },
+  {
+    "id": "histo-b2-39",
+    "question": "Smooth muscle fibers are characterized by: [39th BCS]",
+    "options": [
+      "Single central nucleus and no striations",
+      "Multiple peripheral nuclei and striations",
+      "Intercalated discs",
+      "Triads at A-I junction"
+    ],
+    "correctAnswer": 0,
+    "explanation": "39th BCS question: Smooth muscle cells are spindle-shaped (fusiform) with a single central cigar-shaped nucleus, devoid of sarcomeric striations, and lack T-tubules (possess caveolae instead). Involuntary and autonomic.",
     "subject": "Histology and Embryology",
     "topic": "Muscle Tissue"
   },
   {
-    "id": "histo-b2-39",
-    "question": "Which of the following lymphoid organs is classified as a PRIMARY (central) lymphoid organ in humans?",
-    "options": [
-      "Bone marrow and Thymus",
-      "Spleen, Lymph nodes, and Tonsils",
-      "Peyer's patches and Appendix",
-      "Adenoids and MALT"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Primary (central) lymphoid organs are the sites of antigen-independent lymphocyte development and maturation: Bone marrow (B-cell maturation) and Thymus (T-cell education and positive/negative selection). Secondary (peripheral) lymphoid organs are sites where mature lymphocytes encounter antigens and initiate immune responses: Spleen, Lymph nodes, Tonsils, Peyer patches, Appendix.",
-    "subject": "Histology and Embryology",
-    "topic": "Lymphoid Organs & Immune System"
-  },
-  {
     "id": "histo-b2-40",
-    "question": "Which lymphoid organ lacks lymphatic nodules (germinal centers), lacks afferent lymphatics, and possesses deep epithelial crypts lined by stratified squamous epithelium?",
+    "question": "In cardiac muscle, T-tubules and sarcoplasmic reticulum form a:",
     "options": [
-      "Palatine tonsil",
-      "Spleen",
-      "Thymus",
-      "Mesenteric lymph node"
+      "Diad at Z disc",
+      "Triad at A-I junction",
+      "Triad at Z disc",
+      "Diad at A-I junction"
     ],
     "correctAnswer": 0,
-    "explanation": "Palatine tonsil histology: Incomplete capsule, covered on its oral surface by non-keratinized stratified squamous epithelium that invaginates deeply into tonsillar parenchyma to form 10–20 tonsillar crypts. Tonsillar crypts accumulate cellular debris and bacteria. Palatine tonsils have no afferent lymph vessels (only efferent lymph drainage).",
+    "explanation": "In cardiac muscle, T-tubules are wider, located at the Z DISC, and associate with one cistern of sarcoplasmic reticulum to form a DIAD. In skeletal muscle, T-tubules form a TRIAD at the A-I junction.",
     "subject": "Histology and Embryology",
-    "topic": "Lymphoid Organs & Immune System"
+    "topic": "Muscle Tissue"
   },
   {
     "id": "histo-b2-41",
-    "question": "In the spleen, the periarteriolar lymphoid sheath (PALS) surrounding the central arterioles of the white pulp is composed predominantly of which cell type?",
+    "question": "Intercalated discs in cardiac muscle contain:",
+    "options": [
+      "Gap junctions, desmosomes, and fascia adherens",
+      "Tight junctions only",
+      "Hemidesmosomes only",
+      "Zonula occludens only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Intercalated discs contain: (1) Fascia adherens (anchor actin filaments); (2) Desmosomes / maculae adherentes (prevent separation during contraction); (3) Gap junctions / nexus (provide ionic and electrical coupling).",
+    "subject": "Histology and Embryology",
+    "topic": "Muscle Tissue"
+  },
+  {
+    "id": "histo-b2-42",
+    "question": "Primary (central) lymphoid organ in humans is:",
+    "options": [
+      "Thymus",
+      "Spleen",
+      "Lymph node",
+      "Palatine tonsil"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Primary lymphoid organs: Bone marrow and Thymus (sites of antigen-independent lymphocyte maturation). Secondary lymphoid organs: Spleen, Lymph nodes, Tonsils, Peyer patches, Appendix.",
+    "subject": "Histology and Embryology",
+    "topic": "Lymphoid Organs"
+  },
+  {
+    "id": "histo-b2-43",
+    "question": "Hassall's corpuscles are diagnostic microscopic features of the:",
+    "options": [
+      "Thymus",
+      "Spleen",
+      "Lymph node",
+      "Palatine tonsil"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Hassall's (thymic) corpuscles are concentric whorls of eosinophilic, keratinized epithelial reticular cells found exclusively in the medulla of the Thymus gland.",
+    "subject": "Histology and Embryology",
+    "topic": "Lymphoid Organs"
+  },
+  {
+    "id": "histo-b2-44",
+    "question": "Periarteriolar lymphoid sheath (PALS) in the spleen consists mainly of:",
     "options": [
       "T lymphocytes",
       "B lymphocytes",
       "Plasma cells",
-      "Reticulocytes"
+      "Macrophages"
     ],
     "correctAnswer": 0,
-    "explanation": "Splenic architecture: White pulp consists of Periarteriolar Lymphoid Sheaths (PALS) surrounding central arterioles, which is a T-cell dependent zone. Splenic lymphoid nodules (Malpighian corpuscles) attached to PALS are B-cell zones (germinal centers). Red pulp consists of splenic cords of Billroth and venous sinusoids for erythrocyte filtration and macrophage culling of senescent RBCs.",
+    "explanation": "In splenic white pulp, the Periarteriolar Lymphoid Sheath (PALS) surrounding central arterioles is the T-cell dependent zone. Splenic lymphoid follicles attached to PALS are B-cell zones.",
     "subject": "Histology and Embryology",
-    "topic": "Lymphoid Organs & Immune System"
+    "topic": "Lymphoid Organs"
   },
   {
-    "id": "histo-b2-42",
-    "question": "High endothelial venules (HEVs) lined by cuboidal endothelial cells are specialized vascular conduits for lymphocyte homing located in which region of the lymph node?",
+    "id": "histo-b2-45",
+    "question": "High endothelial venules (HEVs) in a lymph node are located in the:",
     "options": [
-      "Paracortex (deep cortex)",
+      "Paracortex",
       "Outer cortex",
       "Medullary cords",
       "Subcapsular sinus"
     ],
     "correctAnswer": 0,
-    "explanation": "Lymph node zones: (1) Outer cortex: B-cell rich lymphoid nodules (primary and secondary follicles); (2) Paracortex (deep cortex): T-cell zone containing High Endothelial Venules (HEVs) expressing selectins and addressins that allow 90% of circulating lymphocytes to extravasate into the node; (3) Medulla: Medullary cords (plasma cells, macrophages) and medullary sinuses.",
+    "explanation": "High Endothelial Venules (HEVs) are specialized post-capillary venules with cuboidal endothelium located in the lymph node Paracortex (T-cell zone). They allow circulating lymphocytes to enter the node.",
     "subject": "Histology and Embryology",
-    "topic": "Lymphoid Organs & Immune System"
-  },
-  {
-    "id": "histo-b2-43",
-    "question": "The Aorta, Pulmonary trunk, and Brachiocephalic artery are histologically classified as Elastic (conducting) arteries because their tunica media is characterized by:",
-    "options": [
-      "Abundant concentric fenestrated elastic lamellae with smooth muscle fibers in between",
-      "Up to 40 layers of circular smooth muscle with minimal elastin",
-      "A predominantly fibrous adventitia with no internal elastic lamina",
-      "Endothelial lining directly abutting adventitia"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Elastic (conducting) arteries (Aorta, Pulmonary trunk, Common carotid, Subclavian) have a massive tunica media containing 40–70 concentric fenestrated elastic membranes (lamellae). Their elastic recoil (Windkessel effect) during diastole maintains continuous forward systemic blood flow. Muscular (distributing) arteries have media dominated by circular smooth muscle cells.",
-    "subject": "Histology and Embryology",
-    "topic": "Cardiovascular, Skin & Nervous System"
-  },
-  {
-    "id": "histo-b2-44",
-    "question": "The stratum lucidum is a clear, translucent epidermal layer found exclusively in:",
-    "options": [
-      "Thick skin (palms of hands and soles of feet)",
-      "Thin skin of eyelids and abdomen",
-      "Scalp and axilla",
-      "Mucocutaneous junctions"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Epidermal layers from deep to superficial: Stratum basale (germinativum), Stratum spinosum (desmosomes/spines), Stratum granulosum (keratohyalin granules), Stratum lucidum (translucent layer of flattened dead cells with eleidin, present ONLY in thick skin of palms and soles), and Stratum corneum (anucleated keratinized squames).",
-    "subject": "Histology and Embryology",
-    "topic": "Cardiovascular, Skin & Nervous System"
-  },
-  {
-    "id": "histo-b2-45",
-    "question": "Embryologically, the Dermis of the skin is derived from which embryonic germ layer? [39th BCS]",
-    "options": [
-      "Mesoderm (dermatome of somites and lateral plate mesoderm)",
-      "Surface ectoderm",
-      "Neural crest",
-      "Endoderm"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Repeated BCS exam highlight [39th BCS]: Epidermis is derived from Surface Ectoderm. In contrast, the Dermis and subcutaneous hypodermis are derived from Mesoderm (dorsal dermis from the dermatome of paraxial somites; limbs and ventral trunk dermis from somatic lateral plate mesoderm; facial dermis from neural crest). Melanocytes in epidermis derive from Neural Crest.",
-    "subject": "Histology and Embryology",
-    "topic": "Cardiovascular, Skin & Nervous System"
+    "topic": "Lymphoid Organs"
   },
   {
     "id": "histo-b2-46",
-    "question": "Which epidermal cell functions as an antigen-presenting cell (APC) and contains tennis racket-shaped Birbeck granules on electron microscopy?",
+    "question": "Palatine tonsil is covered on its surface by:",
     "options": [
-      "Langerhans cell",
-      "Melanocyte",
-      "Merkel cell",
-      "Keratinocyte"
+      "Non-keratinized stratified squamous epithelium",
+      "Pseudostratified ciliated columnar epithelium",
+      "Simple columnar epithelium",
+      "Transitional epithelium"
     ],
     "correctAnswer": 0,
-    "explanation": "Langerhans cells are bone-marrow derived dendritic APCs found mainly in the stratum spinosum. They express MHC class II and CD1a, take up antigens, and migrate to regional lymph nodes. On TEM, they uniquely contain rod-shaped or tennis-racket-shaped cytoplasmic Birbeck granules. Melanocytes produce melanin; Merkel cells are mechanoreceptors.",
+    "explanation": "Palatine tonsils are covered by Non-keratinized stratified squamous epithelium which invaginates to form 10–20 tonsillar crypts. Tonsils possess efferent lymphatics but NO afferent lymph vessels.",
     "subject": "Histology and Embryology",
-    "topic": "Cardiovascular, Skin & Nervous System"
+    "topic": "Lymphoid Organs"
   },
   {
     "id": "histo-b2-47",
-    "question": "Which of the following neuroglial cells in the Central Nervous System is derived embryologically from the mesodermal mononuclear phagocyte lineage? [39th BCS]",
+    "question": "Tunica media of elastic arteries (e.g., Aorta) contains predominantly:",
     "options": [
-      "Microglia",
-      "Astrocytes",
-      "Oligodendrocytes",
-      "Ependymal cells"
+      "Concentric fenestrated elastic lamellae",
+      "Circular smooth muscle cells",
+      "Dense collagenous tissue",
+      "Skeletal muscle fibers"
     ],
     "correctAnswer": 0,
-    "explanation": "39th BCS glial cell derivation: Astrocytes, Oligodendrocytes, and Ependymal cells are all derived from the neuroectoderm of the neural tube. Microglia are the SOLE CNS glia derived from the Mesoderm (monocyte-macrophage hematopoietic precursor line that enters the brain with vascularization). They serve as the resident phagocytes and immune defense cells of the CNS.",
+    "explanation": "Elastic conducting arteries (Aorta, Pulmonary trunk, Common carotid) have a tunica media packed with 40–70 fenestrated elastic lamellae that recoil during diastole (Windkessel effect).",
     "subject": "Histology and Embryology",
     "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-48",
-    "question": "Which neuroglial cell maintains the Blood-Brain Barrier (BBB) by extending perivascular end-feet (pedicels) around cerebral capillaries?",
+    "question": "Stratum lucidum is present only in:",
     "options": [
-      "Astrocytes (Protoplasmic and Fibrous)",
-      "Microglia",
-      "Schwann cells",
-      "Ependymocytes"
+      "Thick skin of palms and soles",
+      "Thin skin of abdomen",
+      "Skin of scalp",
+      "Facial skin"
     ],
     "correctAnswer": 0,
-    "explanation": "Astrocytes (Protoplasmic in gray matter, Fibrous in white matter) express GFAP and wrap perivascular end-feet around continuous CNS capillaries, inducing and maintaining tight junctions that form the Blood-Brain Barrier. They also regulate extracellular potassium levels, uptake neurotransmitters (glutamate), and form glial scars after injury (gliosis).",
+    "explanation": "Stratum lucidum is a clear, translucent layer of flattened dead cells containing eleidin, found strictly in the Thick Skin of the palms and soles between stratum granulosum and stratum corneum.",
     "subject": "Histology and Embryology",
     "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-49",
-    "question": "Regarding autonomic nervous system innervation, postganglionic sympathetic fibers supplying ECCRINE SWEAT GLANDS release which neurotransmitter?",
+    "question": "Dermis of the skin is derived embryologically from: [39th BCS]",
     "options": [
-      "Acetylcholine (ACh)",
-      "Norepinephrine",
-      "Epinephrine",
-      "Dopamine"
+      "Mesoderm",
+      "Surface ectoderm",
+      "Neural crest",
+      "Endoderm"
     ],
     "correctAnswer": 0,
-    "explanation": "Key autonomic exception in medical exams: Almost all postganglionic sympathetic fibers release Norepinephrine (adrenergic). However, the sympathetic postganglionic fibers supplying Eccrine Sweat Glands (thermoregulation) and renal vascular smooth muscle (dopaminergic) are CHOLINERGIC and release Acetylcholine acting on muscarinic receptors.",
+    "explanation": "39th BCS question: Epidermis originates from Surface Ectoderm. Dermis is derived from Mesoderm (dorsal dermis from somite dermatome; ventral/limb dermis from lateral plate mesoderm). Melanocytes derive from Neural Crest.",
     "subject": "Histology and Embryology",
     "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-50",
-    "question": "In human oogenesis, primary oocytes enter Meiosis I during fetal life and remain arrested in which phase until puberty?",
+    "question": "Birbeck granules on electron microscopy are diagnostic of:",
     "options": [
-      "Diplotene stage of Prophase I",
-      "Metaphase II",
-      "Pachytene stage of Prophase I",
-      "Anaphase I"
+      "Langerhans cells",
+      "Melanocytes",
+      "Merkel cells",
+      "Keratinocytes"
     ],
     "correctAnswer": 0,
-    "explanation": "Oogenesis two meiotic arrests: (1) Primary oocytes begin Meiosis I at 5–6 months in utero and become arrested at the Diplotene stage of Prophase I (dictyotene stage) under the influence of Oocyte Maturation Inhibitor (OMI) until puberty; (2) At ovulation, Meiosis I completes and the secondary oocyte arrests at Metaphase II, which is completed only if fertilization occurs.",
+    "explanation": "Langerhans cells are bone-marrow derived antigen-presenting dendritic cells in the stratum spinosum. On electron microscopy, they exhibit characteristic rod-shaped or tennis racket-shaped Birbeck granules.",
     "subject": "Histology and Embryology",
-    "topic": "Gametogenesis, Fertilization & Implantation"
+    "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-51",
-    "question": "Fertilization normally takes place in which specific anatomical region of the fallopian tube?",
+    "question": "Which neuroglial cell in the CNS is derived from mesoderm? [39th BCS]",
     "options": [
-      "Ampulla",
-      "Isthmus",
-      "Infundibulum",
-      "Interstitial (uterine) part"
+      "Microglia",
+      "Astrocyte",
+      "Oligodendrocyte",
+      "Ependymal cell"
     ],
     "correctAnswer": 0,
-    "explanation": "Fertilization occurs in the Ampulla of the fallopian tube (widest and longest part). Major results of fertilization: (1) Restoration of the diploid number of chromosomes (46); (2) Determination of chromosomal sex (XX or XY); (3) Completion of the second meiotic division of the secondary oocyte; (4) Initiation of cleavage divisions.",
+    "explanation": "39th BCS question: Astrocytes, Oligodendrocytes, and Ependymal cells develop from neural tube neuroectoderm. Microglia originate from Mesoderm (hematopoietic monocyte-macrophage lineage) and act as CNS phagocytes.",
     "subject": "Histology and Embryology",
-    "topic": "Gametogenesis, Fertilization & Implantation"
+    "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-52",
-    "question": "By day 4–5 post-fertilization, the 16-cell compact ball of dividing blastomeres is designated as the:",
+    "question": "Myelin sheath in the Central Nervous System (CNS) is formed by:",
     "options": [
-      "Morula",
-      "Blastocyst",
-      "Gastrula",
-      "Zygote"
+      "Oligodendrocytes",
+      "Schwann cells",
+      "Astrocytes",
+      "Microglia"
     ],
     "correctAnswer": 0,
-    "explanation": "Early embryonic timeline: Zygote (single cell) undergoes rapid mitotic cleavage within the zona pellucida without increasing overall size. At day 3–4 (16–32 blastomeres), it resembles a mulberry and is termed a Morula. Fluid then enters to form a blastocele (blastocyst cavity) around day 4–5, transforming it into a Blastocyst with inner cell mass (embryoblast) and outer cell mass (trophoblast).",
+    "explanation": "Oligodendrocytes form myelin sheaths around multiple axons in the CNS. Schwann cells form myelin sheaths around single axon segments in the Peripheral Nervous System (PNS).",
     "subject": "Histology and Embryology",
-    "topic": "Gametogenesis, Fertilization & Implantation"
+    "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-53",
-    "question": "During which post-fertilization day does the blastocyst normally begin IMPLANTATION into the endometrium?",
+    "question": "The Blood-Brain Barrier (BBB) is maintained by perivascular end-feet of:",
     "options": [
-      "Day 6 (completed by day 10–12)",
-      "Day 1",
-      "Day 14",
-      "Day 21"
+      "Astrocytes",
+      "Microglia",
+      "Oligodendrocytes",
+      "Ependymocytes"
     ],
     "correctAnswer": 0,
-    "explanation": "Implantation timeline: The blastocyst sheds its zona pellucida ('hatching') on day 5. On Day 6, the trophoblast over the embryoblast pole adheres to the receptive endometrium and begins invasion. By Day 10–12, the blastocyst is completely embedded within the endometrial stroma, covered by a coagulation plug.",
+    "explanation": "Astrocytes (expressing GFAP) extend perivascular end-feet (pedicels) around cerebral capillaries, inducing tight junction formation in capillary endothelial cells to maintain the Blood-Brain Barrier.",
     "subject": "Histology and Embryology",
-    "topic": "Gametogenesis, Fertilization & Implantation"
+    "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-54",
-    "question": "What is the MOST COMMON ectopic site for implantation in ectopic pregnancy?",
+    "question": "Neurotransmitter released by sympathetic postganglionic fibers to eccrine sweat glands is:",
     "options": [
-      "Ampulla of the fallopian tube (tubal pregnancy)",
-      "Ovarian stroma",
-      "Cervical canal",
-      "Peritoneal pouch of Douglas (abdominal)"
+      "Acetylcholine",
+      "Norepinephrine",
+      "Epinephrine",
+      "Dopamine"
     ],
     "correctAnswer": 0,
-    "explanation": "Over 95–98% of ectopic pregnancies occur in the Fallopian tube (Tubal pregnancy). Within the fallopian tube, the sites by frequency are: Ampulla (~70–80%, most common), Isthmus (~12%), Fimbria (~11%), and Interstitial/cornual segment (~2–4%, carries highest rupture/hemorrhage risk). Non-tubal sites include ovary, cervix, and abdominal cavity.",
+    "explanation": "Classic autonomic exception: Sympathetic postganglionic fibers to eccrine sweat glands (thermoregulation) are Cholinergic and release Acetylcholine acting on muscarinic receptors.",
     "subject": "Histology and Embryology",
-    "topic": "Gametogenesis, Fertilization & Implantation"
+    "topic": "Cardiovascular, Skin & Nervous System"
   },
   {
     "id": "histo-b2-55",
-    "question": "Which portion of the gravidic decidua directly underlies the implanted blastocyst and contributes to the maternal component of the placenta?",
+    "question": "Primary oocytes remain arrested from fetal life until puberty in:",
     "options": [
-      "Decidua basalis",
-      "Decidua capsularis",
-      "Decidua parietalis (vera)",
-      "Decidua marginalis"
+      "Diplotene stage of Prophase I",
+      "Metaphase II",
+      "Pachytene stage",
+      "Anaphase I"
     ],
     "correctAnswer": 0,
-    "explanation": "The pregnant endometrium (Decidua) is divided into: (1) Decidua basalis: directly beneath the implantation site, forms the maternal component of the placenta (decidual plate); (2) Decidua capsularis: covers the abembryonic pole of the blastocyst; (3) Decidua parietalis: lines the remainder of the uterine cavity. Fusion of capsularis and parietalis obliterates the uterine lumen around week 16.",
+    "explanation": "Primary oocytes begin meiosis I in fetal life and arrest at the Diplotene stage of Prophase I (dictyotene) until puberty. At ovulation, the secondary oocyte arrests at Metaphase II until fertilization.",
     "subject": "Histology and Embryology",
-    "topic": "Gametogenesis, Fertilization & Implantation"
+    "topic": "Gametogenesis & Fertilization"
   },
   {
     "id": "histo-b2-56",
-    "question": "The normal human umbilical cord contains which vascular structures embedded within Wharton's jelly? [42nd BCS]",
+    "question": "Secondary oocyte at ovulation is arrested in which division?",
     "options": [
-      "Two umbilical arteries and one umbilical vein",
-      "One umbilical artery and two umbilical veins",
-      "Two umbilical arteries and two umbilical veins",
-      "One umbilical artery and one umbilical vein"
+      "Metaphase II",
+      "Prophase I",
+      "Anaphase II",
+      "Telophase I"
     ],
     "correctAnswer": 0,
-    "explanation": "Repeated 42nd BCS question: The mature human umbilical cord (length ~55–60 cm, diameter ~2 cm) contains TWO umbilical arteries (carrying deoxygenated fetal blood to the placenta) and ONE umbilical vein (carrying oxygenated, nutrient-rich blood from the placenta to the fetus), surrounded by gelatinous Wharton's jelly (mesenchyme rich in hyaluronic acid). The right umbilical vein obliterates early in development.",
+    "explanation": "At ovulation, the primary oocyte completes meiosis I and the secondary oocyte enters meiosis II, arresting at Metaphase II. It completes meiosis II only upon penetration by a spermatozoon.",
     "subject": "Histology and Embryology",
-    "topic": "Placenta, Amniotic Fluid & Fetal Circulation"
+    "topic": "Gametogenesis & Fertilization"
   },
   {
     "id": "histo-b2-57",
-    "question": "According to standard obstetrical and embryological metrics of the full-term mature placenta:",
+    "question": "Normal anatomical site of fertilization is the:",
     "options": [
-      "Diameter: 15–20 cm; Thickness: 3 cm at center; Weight: 500 gm; Feto-placental weight ratio: 6:1",
-      "Diameter: 30 cm; Thickness: 6 cm; Weight: 1000 gm; Feto-placental ratio: 2:1",
-      "Diameter: 10 cm; Thickness: 1 cm; Weight: 250 gm; Feto-placental ratio: 12:1",
-      "Diameter: 50 cm; Thickness: 5 cm; Weight: 750 gm; Feto-placental ratio: 1:1"
+      "Ampulla of fallopian tube",
+      "Isthmus of fallopian tube",
+      "Uterine cavity",
+      "Infundibulum"
     ],
     "correctAnswer": 0,
-    "explanation": "Metrics from Section 20 of Book 2: Full-term placenta is a discoid organ: Diameter = 15–20 cm; Central thickness = ~3 cm; Weight = ~500 grams (roughly one-sixth of the 3000g term fetus, feto-placental ratio 6:1); Maternal surface has 15–20 cotyledons covered by decidua basalis; Fetal surface is smooth, covered by amnion.",
+    "explanation": "Fertilization normally occurs in the Ampulla of the fallopian tube. Results of fertilization: restoration of diploid chromosomes (46), chromosomal sex determination, second polar body extrusion, and cleavage initiation.",
     "subject": "Histology and Embryology",
-    "topic": "Placenta, Amniotic Fluid & Fetal Circulation"
+    "topic": "Gametogenesis & Fertilization"
   },
   {
     "id": "histo-b2-58",
-    "question": "Maternal immunoglobulin G (IgG) transport across the placental syncytiotrophoblast to the fetus begins actively at approximately which gestational age?",
+    "question": "A morula is a solid ball of dividing cells consisting of approximately:",
     "options": [
-      "14 weeks (3.5 months)",
-      "4 weeks",
-      "28 weeks",
-      "37 weeks"
+      "16 cells (day 3–4)",
+      "2 cells",
+      "4 cells",
+      "100 cells"
     ],
     "correctAnswer": 0,
-    "explanation": "Transmission of maternal antibodies: Syncytiotrophoblast expresses neonatal Fc receptors (FcRn) that actively pinocytose maternal IgG (the only immunoglobulin crossing the placenta). Transport begins at approximately 14 weeks of gestation and rises exponentially in the third trimester, conferring passive neonatal immunity against diphtheria, tetanus, measles, etc.",
+    "explanation": "Cleavage division produces blastomeres. By day 3–4 post-fertilization, a 16-cell compact ball resembling a mulberry is termed a Morula. Around day 4–5, fluid accumulation converts it into a Blastocyst.",
     "subject": "Histology and Embryology",
-    "topic": "Placenta, Amniotic Fluid & Fetal Circulation"
+    "topic": "Gametogenesis & Fertilization"
   },
   {
     "id": "histo-b2-59",
-    "question": "In the second half of pregnancy and at term, what is the PREDOMINANT physiological source of amniotic fluid? (produces ~500–800 ml/day)",
+    "question": "Implantation of the human blastocyst normally begins on:",
     "options": [
-      "Fetal urine (micturition)",
-      "Maternal transudate across uterine wall",
-      "Fetal sweat glands",
-      "Placental syncytial shedding"
+      "Day 6 after fertilization",
+      "Day 1 after fertilization",
+      "Day 14 after fertilization",
+      "Day 21 after fertilization"
     ],
     "correctAnswer": 0,
-    "explanation": "Amniotic fluid dynamics: In the first trimester, amniotic fluid is derived from transudation across fetal skin and maternal placenta. From week 16 onward (keratinization of fetal skin), Fetal Urine becomes the primary source (~500–800 ml/day at term). Fetal swallowing (~400–500 ml/day) is the primary clearance mechanism. Volume is turned over completely every 3 hours.",
+    "explanation": "Zona pellucida is shed on day 5. Implantation begins on Day 6 with trophoblast attachment to the receptive endometrium, and is completed by Day 10–12.",
     "subject": "Histology and Embryology",
-    "topic": "Placenta, Amniotic Fluid & Fetal Circulation"
+    "topic": "Gametogenesis & Fertilization"
   },
   {
     "id": "histo-b2-60",
-    "question": "Fetal circulation shunt: The Ductus Venosus bypasses the hepatic sinusoids to shunt oxygenated blood directly from the umbilical vein into which vessel?",
+    "question": "Most common site of ectopic pregnancy is the:",
+    "options": [
+      "Ampulla of fallopian tube",
+      "Isthmus of fallopian tube",
+      "Ovary",
+      "Cervix"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Over 95% of ectopic pregnancies are tubal pregnancies. Within the fallopian tube, the Ampulla is the most common site (~70–80%), followed by the isthmus (~12%) and fimbriae (~11%).",
+    "subject": "Histology and Embryology",
+    "topic": "Gametogenesis & Fertilization"
+  },
+  {
+    "id": "histo-b2-61",
+    "question": "Maternal component of the placenta is formed by the:",
+    "options": [
+      "Decidua basalis",
+      "Decidua capsularis",
+      "Decidua parietalis",
+      "Chorion laeve"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The placenta consists of two parts: (1) Fetal portion from Chorion frondosum; (2) Maternal portion from Decidua basalis (endometrium directly underlying the implantation site).",
+    "subject": "Histology and Embryology",
+    "topic": "Gametogenesis & Fertilization"
+  },
+  {
+    "id": "histo-b2-62",
+    "question": "Normal umbilical cord contains: [42nd BCS]",
+    "options": [
+      "2 arteries and 1 vein",
+      "1 artery and 2 veins",
+      "2 arteries and 2 veins",
+      "1 artery and 1 vein"
+    ],
+    "correctAnswer": 0,
+    "explanation": "42nd BCS question: The mature umbilical cord contains Two Umbilical Arteries (carrying deoxygenated blood from fetus to placenta) and One Umbilical Vein (carrying oxygenated blood to fetus), surrounded by Wharton's jelly.",
+    "subject": "Histology and Embryology",
+    "topic": "Placenta & Fetal Circulation"
+  },
+  {
+    "id": "histo-b2-63",
+    "question": "Average weight of a mature full-term placenta is approximately:",
+    "options": [
+      "500 gm",
+      "250 gm",
+      "750 gm",
+      "1000 gm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Term placenta metrics: Weight ~500 grams (1/6th of fetal weight, 6:1 ratio); Diameter 15–20 cm; Thickness 3 cm at center; 15–20 maternal cotyledons.",
+    "subject": "Histology and Embryology",
+    "topic": "Placenta & Fetal Circulation"
+  },
+  {
+    "id": "histo-b2-64",
+    "question": "Feto-placental weight ratio at term is approximately:",
+    "options": [
+      "6 : 1",
+      "3 : 1",
+      "1 : 1",
+      "10 : 1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At term, the fetus weighs approximately 3000 gm and the placenta weighs approximately 500 gm, establishing a feto-placental weight ratio of approximately 6:1.",
+    "subject": "Histology and Embryology",
+    "topic": "Placenta & Fetal Circulation"
+  },
+  {
+    "id": "histo-b2-65",
+    "question": "Maternal IgG antibodies begin active placental transport to the fetus at:",
+    "options": [
+      "14 weeks of gestation",
+      "4 weeks of gestation",
+      "28 weeks of gestation",
+      "36 weeks of gestation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Maternal IgG is the only immunoglobulin that crosses the placenta, mediated by syncytiotrophoblast Fc receptors. Active transport begins at approximately 14 weeks (3.5 months) and peaks in third trimester.",
+    "subject": "Histology and Embryology",
+    "topic": "Placenta & Fetal Circulation"
+  },
+  {
+    "id": "histo-b2-66",
+    "question": "Main source of amniotic fluid in the second half of pregnancy is:",
+    "options": [
+      "Fetal urine",
+      "Maternal serum transudate",
+      "Fetal lung fluid",
+      "Amniotic membrane"
+    ],
+    "correctAnswer": 0,
+    "explanation": "From mid-pregnancy onward, Fetal Urine is the primary source of amniotic fluid (~500–800 ml/day at term). Fetal swallowing is the primary absorption pathway. Fluid turns over completely every 3 hours.",
+    "subject": "Histology and Embryology",
+    "topic": "Placenta & Fetal Circulation"
+  },
+  {
+    "id": "histo-b2-67",
+    "question": "Ductus venosus shunts oxygenated blood from the umbilical vein directly into the:",
     "options": [
       "Inferior vena cava (IVC)",
       "Superior vena cava (SVC)",
@@ -844,218 +942,120 @@ export const HISTOLOGY_BOOK_2_QUESTIONS: Question[] = [
       "Right ventricle"
     ],
     "correctAnswer": 0,
-    "explanation": "Fetal circulation shunts: (1) Ductus venosus shunts oxygenated umbilical venous blood directly into the Inferior Vena Cava (IVC), bypassing the hepatic microcirculation; (2) Foramen ovale shunts blood from the right atrium directly to the left atrium; (3) Ductus arteriosus shunts blood from the pulmonary trunk into the descending aorta, bypassing non-aerated fetal lungs.",
+    "explanation": "Fetal circulation: Ductus venosus shunts oxygenated blood from the umbilical vein directly into the Inferior Vena Cava (IVC), bypassing the hepatic sinusoids.",
     "subject": "Histology and Embryology",
-    "topic": "Placenta, Amniotic Fluid & Fetal Circulation"
-  },
-  {
-    "id": "histo-b2-61",
-    "question": "After birth and functional closure, the umbilical vein, ductus venosus, and ductus arteriosus transform into which anatomical fibrous remnants, respectively?",
-    "options": [
-      "Ligamentum teres hepatis, Ligamentum venosum, and Ligamentum arteriosum",
-      "Ligamentum arteriosum, Ligamentum venosum, and Medial umbilical ligament",
-      "Fossa ovalis, Median umbilical ligament, and Ligamentum teres",
-      "Urachus, Ligamentum falciforme, and Ligamentum venosum"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Postnatal anatomical remnants: (1) Left umbilical vein obliterates into the Ligamentum teres hepatis (round ligament of liver); (2) Ductus venosus becomes the Ligamentum venosum (in fissure of liver); (3) Ductus arteriosus becomes the Ligamentum arteriosum (between left pulmonary artery and aortic arch); (4) Foramen ovale becomes the Fossa ovalis; (5) Distal umbilical arteries become Medial umbilical ligaments.",
-    "subject": "Histology and Embryology",
-    "topic": "Placenta, Amniotic Fluid & Fetal Circulation"
-  },
-  {
-    "id": "histo-b2-62",
-    "question": "Which of the following tissues and organs is derived from the ECTODERM?",
-    "options": [
-      "Epidermis, Neural tube (brain & spinal cord), Neural crest cells, and Pituitary gland (PALS)",
-      "Kidneys, Ureters, and Gonads",
-      "Spleen, Heart, and Skeletal muscle",
-      "Epithelial lining of GI tract and Respiratory tree"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Ectoderm derivatives: Surface ectoderm (Epidermis, hair, nails, lens, anterior pituitary/Rathke pouch); Neuroectoderm (CNS, retina, posterior pituitary); Neural crest (PNS ganglia, Schwann cells, adrenal medulla, melanocytes, craniofacial bones). Mnemonic for ectodermal glands: PALS (Pituitary, Apocrine mammary, Lacrimal, Skin glands). Mesoderm gives rise to kidneys, heart, bone, muscle, spleen; Endoderm to GI/respiratory mucosa.",
-    "subject": "Histology and Embryology",
-    "topic": "Germ Layers & Pharyngeal Apparatus"
-  },
-  {
-    "id": "histo-b2-63",
-    "question": "The Kidneys, Ureters, and Gonads (testes and ovaries) originate from which division of the embryonic mesoderm? [48th BCS]",
-    "options": [
-      "Intermediate mesoderm",
-      "Paraxial mesoderm (somites)",
-      "Lateral plate somatic mesoderm",
-      "Lateral plate splanchnic mesoderm"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Repeated 48th BCS question on mesodermal subdivisions: (1) Paraxial mesoderm forms somites (sclerotome -> axial skeleton/vertebrae, myotome -> skeletal muscles, dermatome -> dermis); (2) Intermediate mesoderm forms the Urogenital system (pronephros, mesonephros, metanephros/permanent kidney, ureter, gonads, and genital ducts); (3) Lateral plate mesoderm forms somatic and splanchnic body wall/visceral layers, heart, and spleen.",
-    "subject": "Histology and Embryology",
-    "topic": "Germ Layers & Pharyngeal Apparatus"
-  },
-  {
-    "id": "histo-b2-64",
-    "question": "All muscles of facial expression, the posterior belly of digastric, stylohyoid, and stapedius muscles are derived from which pharyngeal (branchial) arch?",
-    "options": [
-      "2nd Pharyngeal Arch (Hyoid arch, Cranial Nerve VII)",
-      "1st Pharyngeal Arch (Mandibular arch, Cranial Nerve V3)",
-      "3rd Pharyngeal Arch (Cranial Nerve IX)",
-      "4th Pharyngeal Arch (Cranial Nerve X)"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Pharyngeal arches muscle & nerve derivatives: (1) 1st Arch (CN V3): Muscles of mastication, anterior belly of digastric, mylohyoid, tensor tympani, tensor veli palatini; (2) 2nd Arch (CN VII): Muscles of facial expression, stapedius, stylohyoid, posterior belly of digastric; (3) 3rd Arch (CN IX): Stylopharyngeus only; (4) 4th Arch (CN X, superior laryngeal): Cricothyroid, levator veli palatini, pharyngeal constrictors; (5) 6th Arch (CN X, recurrent laryngeal): Intrinsic muscles of larynx except cricothyroid.",
-    "subject": "Histology and Embryology",
-    "topic": "Germ Layers & Pharyngeal Apparatus"
-  },
-  {
-    "id": "histo-b2-65",
-    "question": "The 3rd pharyngeal arch gives rise to which muscle, nerve, skeletal structure, and artery? [42nd BCS]",
-    "options": [
-      "Stylopharyngeus muscle, Glossopharyngeal nerve (CN IX), Greater horn and lower body of hyoid bone, and Common/internal carotid arteries",
-      "Muscles of mastication, Mandibular nerve, Meckel cartilage, and Maxillary artery",
-      "Stapedius, Facial nerve, Reichert cartilage, and Stapedial artery",
-      "Cricothyroid, Superior laryngeal nerve, Thyroid cartilage, and Subclavian artery"
-    ],
-    "correctAnswer": 0,
-    "explanation": "42nd BCS highlight on the 3rd Pharyngeal Arch: Nerve is Glossopharyngeal (CN IX); Muscle is Stylopharyngeus; Skeletal derivatives are Greater horn (cornu) and lower portion of the body of hyoid bone; Arterial derivatives are Common Carotid Artery and proximal segment of Internal Carotid Artery (3rd aortic arch).",
-    "subject": "Histology and Embryology",
-    "topic": "Germ Layers & Pharyngeal Apparatus"
-  },
-  {
-    "id": "histo-b2-66",
-    "question": "The Thymus and the Inferior Parathyroid glands develop embryologically from which pharyngeal pouch? [42nd BCS]",
-    "options": [
-      "3rd Pharyngeal Pouch",
-      "1st Pharyngeal Pouch",
-      "2nd Pharyngeal Pouch",
-      "4th Pharyngeal Pouch"
-    ],
-    "correctAnswer": 0,
-    "explanation": "42nd BCS question: (1) 1st pouch: Middle ear cavity (tympanic cavity) and Eustachian tube; (2) 2nd pouch: Palatine tonsil crypts; (3) 3rd pouch: Dorsal wing -> Inferior Parathyroid glands; Ventral wing -> Thymus; (4) 4th pouch: Dorsal wing -> Superior Parathyroid glands; Ventral wing -> Ultimobranchial body (giving calcitonin-secreting parafollicular C cells of thyroid). Inferior parathyroid migrates with the thymus, ending lower than the superior parathyroid.",
-    "subject": "Histology and Embryology",
-    "topic": "Germ Layers & Pharyngeal Apparatus"
-  },
-  {
-    "id": "histo-b2-67",
-    "question": "Spina bifida cystica and Anencephaly result embryologically from failure of closure of which structures, respectively?",
-    "options": [
-      "Caudal neuropore (day 27–28) and Cranial neuropore (day 25)",
-      "Cranial neuropore and Caudal neuropore",
-      "Pleuroperitoneal canal and Lateral mesodermal folds",
-      "First pharyngeal pouch and Second pharyngeal cleft"
-    ],
-    "correctAnswer": 0,
-    "explanation": "Neural tube defect embryology: Cranial (anterior) neuropore normally closes on Day 25; failure of closure results in Anencephaly (merocrania) and Craniorachischisis. Caudal (posterior) neuropore normally closes on Day 27–28; failure of closure results in Spina bifida (occulta, meningocele, myelomeningocele). Maternal periconceptional Folic Acid supplementation (400 mcg - 4 mg daily) prevents >70% of these defects.",
-    "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Placenta & Fetal Circulation"
   },
   {
     "id": "histo-b2-68",
-    "question": "Hirschsprung disease (congenital aganglionic megacolon) is caused by the embryological failure of which cells to migrate into the distal bowel wall?",
+    "question": "Ligamentum teres hepatis is the adult anatomical remnant of the:",
     "options": [
-      "Neural crest cells (failing to form Meissner and Auerbach plexuses)",
-      "Endodermal stem cells",
-      "Intermediate mesodermal cells",
-      "Splanchnic mesothelial cells"
+      "Left umbilical vein",
+      "Ductus venosus",
+      "Ductus arteriosus",
+      "Umbilical artery"
     ],
     "correctAnswer": 0,
-    "explanation": "Hirschsprung disease is a neurocristopathy caused by failure of craniocaudal migration of vagal Neural Crest cells during weeks 5–12 into the distal colon and rectum. Consequently, both Meissner (submucosal) and Auerbach (myenteric) ganglion plexuses are completely absent in the affected rectosigmoid segment, causing permanent unrelaxed contraction, functional obstruction, and proximal megacolon.",
+    "explanation": "Vascular remnants: Left umbilical vein becomes Ligamentum teres hepatis; Ductus venosus becomes Ligamentum venosum; Ductus arteriosus becomes Ligamentum arteriosum; Umbilical arteries become Medial umbilical ligaments.",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Placenta & Fetal Circulation"
   },
   {
     "id": "histo-b2-69",
-    "question": "DiGeorge syndrome (22q11.2 deletion syndrome) manifests with thymic hypoplasia, hypocalcemic tetany, and conotruncal cardiac defects due to abnormal development of which embryological structures?",
+    "question": "All of the following glands are derived from ectoderm EXCEPT:",
     "options": [
-      "3rd and 4th Pharyngeal Pouches and neural crest cell migration",
-      "1st and 2nd Pharyngeal Pouches",
-      "2nd and 3rd Pharyngeal Clefts",
-      "Thyroglossal duct"
+      "Thyroid gland",
+      "Pituitary gland",
+      "Mammary gland",
+      "Lacrimal gland"
     ],
     "correctAnswer": 0,
-    "explanation": "DiGeorge anomaly results from defective neural crest cell migration into the 3rd and 4th pharyngeal pouches. Triad: (1) Absent/hypoplastic Thymus -> profound T-cell deficiency (impaired cell-mediated immunity); (2) Absent Parathyroid glands -> severe neonatal hypocalcemia and tetany; (3) Conotruncal cardiovascular malformations (Truncus arteriosus, Tetralogy of Fallot, interrupted aortic arch).",
+    "explanation": "Mnemonic for Ectodermal Glands: PALS (Pituitary, Apocrine mammary, Lacrimal, Skin glands/salivary glands). Thyroid and parathyroid glands develop from Endoderm (pharyngeal gut / floor of pharynx).",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Germ Layers & Pharyngeal Apparatus"
   },
   {
     "id": "histo-b2-70",
-    "question": "Meckel's diverticulum, the most common congenital anomaly of the gastrointestinal tract, is an embryological remnant of which persistent structure?",
+    "question": "Kidneys, ureters, and gonads develop from: [48th BCS]",
     "options": [
-      "Vitellointestinal (omphalomesenteric) duct",
-      "Allantois (urachus)",
-      "Ventral pancreatic bud",
-      "Left umbilical vein"
+      "Intermediate mesoderm",
+      "Paraxial mesoderm",
+      "Lateral plate mesoderm",
+      "Surface ectoderm"
     ],
     "correctAnswer": 0,
-    "explanation": "Meckel's diverticulum represents partial persistence of the Vitellointestinal (omphalomesenteric / yolk stalk) duct on the antimesenteric border of the ileum. Classic 'Rule of 2s': 2% prevalence, within 2 feet of ileocecal valve, 2 inches in length, 2 times more common in males, symptomatic by 2 years of age, and contains 2 types of ectopic mucosa (gastric mucosa causing peptic bleeding, and pancreatic tissue).",
+    "explanation": "48th BCS question: Intermediate mesoderm gives rise to the urogenital system (kidneys, ureters, gonads, and genital ducts). Paraxial mesoderm forms somites (axial skeleton, muscle, dermis). Lateral plate forms heart, blood, spleen.",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Germ Layers & Pharyngeal Apparatus"
   },
   {
     "id": "histo-b2-71",
-    "question": "In horseshoe kidney, the fused metanephric blastemas fail to ascend to the normal upper lumbar position because their ascent is physically obstructed by which vascular structure?",
+    "question": "Muscles of facial expression develop from which pharyngeal arch?",
     "options": [
-      "Root of the Inferior Mesenteric Artery (IMA)",
-      "Superior Mesenteric Artery (SMA)",
-      "Celiac trunk",
-      "Bifurcation of the abdominal aorta"
+      "2nd pharyngeal arch (Hyoid arch)",
+      "1st pharyngeal arch",
+      "3rd pharyngeal arch",
+      "4th pharyngeal arch"
     ],
     "correctAnswer": 0,
-    "explanation": "Horseshoe kidney occurs when the lower poles of the developing kidneys fuse across the midline while in the pelvis (week 7–9). As the fused kidney ascends towards the renal fossa, its central isthmus becomes caught beneath the origin of the Inferior Mesenteric Artery (IMA) at the level of L3 vertebral body, remaining situated in the lower lumbar region. Renal function is usually normal.",
+    "explanation": "2nd Arch (Cranial Nerve VII, Facial): Muscles of facial expression, stapedius, stylohyoid, and posterior belly of digastric. 1st Arch (CN V3): Muscles of mastication, mylohyoid, anterior digastric.",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Germ Layers & Pharyngeal Apparatus"
   },
   {
     "id": "histo-b2-72",
-    "question": "A newborn infant is observed to have intermittent discharge of clear urine from the umbilicus. What is the embryological diagnosis?",
+    "question": "Stylopharyngeus muscle and common carotid artery develop from: [42nd BCS]",
     "options": [
-      "Patent urachus (urachal fistula)",
-      "Persistent vitelline duct fistula",
-      "Urachal cyst",
-      "Meckel diverticulum"
+      "3rd pharyngeal arch",
+      "1st pharyngeal arch",
+      "2nd pharyngeal arch",
+      "4th pharyngeal arch"
     ],
     "correctAnswer": 0,
-    "explanation": "Patent urachus (urachal fistula) results from complete failure of obliteration of the intra-embryonic allantoic canal (which normally converts into the fibrous median umbilical ligament / urachus). This maintains a patent tubular communication between the bladder dome and the umbilicus, causing leakage of urine. In contrast, a persistent vitelline fistula discharges fecal contents.",
+    "explanation": "42nd BCS question: 3rd Pharyngeal Arch derivatives: Nerve is Glossopharyngeal (CN IX); Muscle is Stylopharyngeus; Skeletal is Greater horn of hyoid; Artery is Common carotid and internal carotid stem.",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Germ Layers & Pharyngeal Apparatus"
   },
   {
     "id": "histo-b2-73",
-    "question": "Cleft lip results from the failure of fusion between which embryonic facial prominences?",
+    "question": "Thymus and inferior parathyroid glands develop from the: [42nd BCS]",
     "options": [
-      "Maxillary prominence and Medial nasal prominence",
-      "Lateral palatine processes (palatal shelves)",
-      "Mandibular prominences across the midline",
-      "Frontonasal prominence and lateral nasal prominence"
+      "3rd pharyngeal pouch",
+      "1st pharyngeal pouch",
+      "2nd pharyngeal pouch",
+      "4th pharyngeal pouch"
     ],
     "correctAnswer": 0,
-    "explanation": "Facial embryology distinctions: (1) Cleft lip results from failure of fusion between the Maxillary prominence and the Medial nasal prominence on one or both sides (affecting intermaxillary segment and philtrum); (2) Cleft palate results from failure of fusion of the secondary palatal shelves (lateral palatine processes of maxillary prominences) with each other or with the primary palate / nasal septum.",
+    "explanation": "42nd BCS question: 3rd pharyngeal pouch: Dorsal wing forms Inferior Parathyroid gland; Ventral wing forms Thymus. 4th pouch dorsal wing forms Superior Parathyroid gland.",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Germ Layers & Pharyngeal Apparatus"
   },
   {
     "id": "histo-b2-74",
-    "question": "Hypospadias is a developmental anomaly where the external urethral orifice is situated on the ventral aspect of the penis. It is caused by failure of fusion of the:",
+    "question": "Failure of closure of the caudal neuropore results in:",
     "options": [
-      "Urethral (urogenital) folds over the urethral groove",
-      "Genital tubercle posteriorly",
-      "Labioscrotal swellings",
-      "Mesonephric ducts"
+      "Spina bifida",
+      "Anencephaly",
+      "Encephalocele",
+      "Holoprosencephaly"
     ],
     "correctAnswer": 0,
-    "explanation": "Hypospadias results from failure of complete midline fusion of the Urethral (urogenital) folds over the urethral groove on the ventral surface of the developing phallus under androgen stimulation. Epispadias, in contrast, features the urethra opening on the DORSAL surface of the penis, caused by abnormal posterior positioning of the genital tubercle (often associated with bladder exstrophy).",
+    "explanation": "Cranial neuropore closes on Day 25; failure of closure causes Anencephaly. Caudal neuropore closes on Day 27–28; failure of closure causes Spina bifida. Folic acid supplementation prevents >70% of neural tube defects.",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Congenital Anomalies"
   },
   {
     "id": "histo-b2-75",
-    "question": "A congenital tracheoesophageal fistula (TEF) with esophageal atresia (most commonly Type C: proximal atresia with distal fistula) results embryologically from defective development of the:",
+    "question": "Hirschsprung disease (aganglionic megacolon) is caused by failure of migration of:",
     "options": [
-      "Tracheoesophageal septum failing to divide the cranial foregut properly",
-      "Failure of recanalization of the duodenum",
-      "Defective closure of the pleuroperitoneal membrane",
-      "Persistence of the pharyngeal pouches"
+      "Neural crest cells",
+      "Endodermal stem cells",
+      "Intermediate mesoderm",
+      "Surface ectoderm"
     ],
     "correctAnswer": 0,
-    "explanation": "Tracheoesophageal fistula with esophageal atresia occurs when the tracheoesophageal septum (longitudinal ridges that pinch off the respiratory diverticulum from the dorsal esophagus during week 4–5) deviates or fails to separate the foregut completely. The commonest presentation is blind-ending upper esophageal pouch with distal esophagus communicating with the carina/trachea (polyhydramnios in utero, choking/frothing at first feed).",
+    "explanation": "Hirschsprung disease is a neurocristopathy caused by failure of vagal neural crest cells to migrate into the distal bowel wall, leading to complete absence of Auerbach (myenteric) and Meissner (submucosal) plexuses.",
     "subject": "Histology and Embryology",
-    "topic": "Congenital Anomalies & Teratology"
+    "topic": "Congenital Anomalies"
   }
 ];
