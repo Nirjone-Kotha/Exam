@@ -91,3 +91,27 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.15s ease-out forwards;
 }
+
+/* Safe area insets for notched iPhones and mobile browsers */
+@supports (padding-top: env(safe-area-inset-top)) {
+  header {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Print Friendly Styles for High-Yield Notes Sheets */
+@media print {
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

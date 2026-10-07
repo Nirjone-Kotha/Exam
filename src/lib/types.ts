@@ -62,3 +62,15 @@ export interface AttemptComparison {
   timeDelta?: number;
   wrongCountDelta?: number;
 }
+
+export type NoteCategory = "Difficult" | "Important to read" | "Frequently coming question";
+
+export interface SubjectNote {
+  id: string;
+  subjectId: string;
+  subjectName: string;
+  topic: string;
+  pageNumber: number;
+  category: NoteCategory;
+  createdAt: number;
+}

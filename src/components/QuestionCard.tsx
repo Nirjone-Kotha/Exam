@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Question } from "../lib/types";
-import { Bookmark, RotateCcw } from "lucide-react";
+import { Bookmark, RotateCcw, Ban } from "lucide-react";
 
 interface QuestionCardProps {
   question: Question;
@@ -26,6 +26,34 @@ export default function QuestionCard({
   onToggleMarkReview,
 }: QuestionCardProps) {
   const isAnswered = selectedOption !== undefined && selectedOption !== -1;
+  const [eliminatedOptions, setEliminatedOptions] = useState<number[]>([]);
+
+  const handleOptionClick = (optIndex: number) => {
+    if (typeof navigator !== "undefined" && navigator.vibrate) {
+      navigator.vibrate(8);
+    }
+    // If was eliminated, un-eliminate on select
+    if (eliminatedOptions.includes(optIndex)) {
+      setEliminatedOptions(eliminatedOptions.filter((i) => i !== optIndex));
+    }
+    onSelectOption(optIndex);
+  };
+
+  const handleToggleEliminate = (e: React.MouseEvent, optIndex: number) => {
+    e.stopPropagation();
+    if (typeof navigator !== "undefined" && navigator.vibrate) {
+      navigator.vibrate(5);
+    }
+    if (eliminatedOptions.includes(optIndex)) {
+      setEliminatedOptions(eliminatedOptions.filter((i) => i !== optIndex));
+    } else {
+      setEliminatedOptions([...eliminatedOptions, optIndex]);
+      // If currently selected, clear selection
+      if (selectedOption === optIndex) {
+        onClearOption();
+      }
+    }
+  };
 
   return (
     <article
@@ -93,17 +121,21 @@ export default function QuestionCard({
         {question.question}
       </h2>
 
-      {/* Options List - Large, comfortable mobile touch targets */}
+      {/* Options List with 50-50 elimination and haptic feedback */}
       <div className="space-y-2.5 sm:space-y-3">
         {question.options.map((optionText, optIndex) => {
           const isSelected = selectedOption === optIndex;
+          const isEliminated = eliminatedOptions.includes(optIndex);
+
           return (
-            <label
+            <div
               key={optIndex}
-              onClick={() => onSelectOption(optIndex)}
-              className={`flex items-start p-3 sm:p-4 rounded-xl sm:rounded-2xl border cursor-pointer transition-all duration-150 select-none touch-manipulation active:scale-[0.99] min-h-[48px] ${
+              onClick={() => handleOptionClick(optIndex)}
+              className={`group flex items-start p-3 sm:p-4 rounded-xl sm:rounded-2xl border cursor-pointer transition-all duration-150 select-none touch-manipulation active:scale-[0.99] min-h-[48px] ${
                 isSelected
                   ? "bg-emerald-50/90 border-emerald-500 text-emerald-950 dark:bg-emerald-950/40 dark:border-emerald-600 dark:text-emerald-100 shadow-sm ring-1 ring-emerald-500/20"
+                  : isEliminated
+                  ? "bg-slate-50/50 border-slate-200/50 text-slate-400 dark:bg-slate-900/50 dark:border-slate-800/50 opacity-50"
                   : "bg-white hover:bg-slate-50 border-slate-200 text-slate-800 dark:bg-slate-800/60 dark:hover:bg-slate-800 dark:border-slate-700 dark:text-slate-200 active:bg-slate-50"
               }`}
             >
@@ -111,15 +143,36 @@ export default function QuestionCard({
                 className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg sm:rounded-xl flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0 transition-colors ${
                   isSelected
                     ? "bg-emerald-600 text-white shadow-sm"
+                    : isEliminated
+                    ? "bg-slate-100 text-slate-400 line-through"
                     : "bg-slate-100 text-slate-600 border border-slate-300 dark:bg-slate-700 dark:text-slate-300 dark:border-slate-600"
                 }`}
               >
                 {OPTION_LABELS[optIndex] || optIndex + 1}
               </div>
-              <span className="text-xs sm:text-sm md:text-base leading-relaxed flex-1 font-normal pt-0.5">
+
+              <span
+                className={`text-xs sm:text-sm md:text-base leading-relaxed flex-1 font-normal pt-0.5 ${
+                  isEliminated ? "line-through text-slate-400" : ""
+                }`}
+              >
                 {optionText}
               </span>
-            </label>
+
+              {/* Option Elimination / Strikethrough Button */}
+              <button
+                type="button"
+                onClick={(e) => handleToggleEliminate(e, optIndex)}
+                title={isEliminated ? "Restore option" : "Cross out / eliminate option"}
+                className={`p-1.5 rounded-lg opacity-0 group-hover:opacity-100 sm:transition-opacity ${
+                  isEliminated
+                    ? "opacity-100 text-rose-500 hover:text-rose-600"
+                    : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                }`}
+              >
+                <Ban className="w-3.5 h-3.5" />
+              </button>
+            </div>
           );
         })}
       </div>

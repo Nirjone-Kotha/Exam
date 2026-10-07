@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { getSubjectBySlug } from "../../../data/subjects";
 import { getAttemptsForExam } from "../../../lib/storage";
-import { Clock, AlertCircle, Play, History, ArrowLeft, CheckCircle2, Award } from "lucide-react";
+import { Clock, AlertCircle, Play, History, ArrowLeft, CheckCircle2, Award, NotebookPen } from "lucide-react";
 
 export default function SubjectDetailPage() {
   const params = useParams();
@@ -69,6 +69,14 @@ export default function SubjectDetailPage() {
           </div>
 
           <div className="flex items-center space-x-2 text-xs text-slate-500 self-start sm:self-auto">
+            <Link
+              href={`/notes/${subject.slug}`}
+              className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900 border border-indigo-200 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 font-bold text-xs transition-colors shadow-sm"
+            >
+              <NotebookPen className="w-3.5 h-3.5" />
+              <span>Important Notes</span>
+            </Link>
+
             <div className="bg-slate-50 dark:bg-slate-800/80 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
               <span className="block font-black text-sm sm:text-base text-slate-900 dark:text-white">
                 {subject.exams.length}

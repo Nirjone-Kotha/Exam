@@ -73,6 +73,18 @@ export default function ExamRoomPage() {
     };
   }, [secondsRemaining, isSubmitting]);
 
+  // Protect against accidental tab close/refresh during active exam
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (Object.keys(userAnswers).length > 0 && !isSubmitting) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [userAnswers, isSubmitting]);
+
   // Answer selection handler
   const handleSelectOption = (questionId: string, optionIndex: number) => {
     setUserAnswers((prev) => ({

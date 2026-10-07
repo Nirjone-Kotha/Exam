@@ -10,6 +10,7 @@ import { PATHOLOGY_BCS_QUESTIONS } from "./questions/pathology-bcs";
 import { PHARMACOLOGY_BCS_QUESTIONS } from "./questions/pharmacology-bcs";
 import { PHYSIOLOGY_BCS_QUESTIONS } from "./questions/physiology-bcs";
 import { SURGERY_BCS_QUESTIONS } from "./questions/surgery-bcs";
+import { HISTOLOGY_BCS_QUESTIONS } from "./questions/histology-bcs";
 
 export const SUBJECTS_DATA: Subject[] = [
   {
@@ -218,6 +219,25 @@ export const SUBJECTS_DATA: Subject[] = [
         description: "All 27 authentic Previous Special BCS questions for Microbiology & Immunology with verified answers and detailed microbiological explanations.",
         negativeMark: 0.5,
         questions: MICROBIOLOGY_BCS_QUESTIONS
+      }
+    ]
+  },
+  {
+    id: "histology",
+    name: "Histology",
+    slug: "histology",
+    description: "Microscopic Anatomy, Epithelial, Connective, Muscular & Nervous Tissues, and Organ Microarchitecture",
+    icon: "Microscope",
+    accentColor: "from-fuchsia-600 to-pink-700",
+    exams: [
+      {
+        id: "histology-bcs-prev",
+        title: "Previous BCS Questions",
+        subjectId: "histology",
+        subjectName: "Histology",
+        description: "Authentic Previous Special BCS and residency microscopic anatomy questions with comprehensive tissue explanations.",
+        negativeMark: 0.5,
+        questions: HISTOLOGY_BCS_QUESTIONS
       }
     ]
   }

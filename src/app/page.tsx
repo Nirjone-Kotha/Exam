@@ -24,7 +24,8 @@ import {
   TrendingUp,
   ArrowRight,
   Sparkles,
-  Award
+  Award,
+  NotebookPen
 } from "lucide-react";
 
 // Icon mapping for subjects
@@ -153,12 +154,39 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* Important Notes Feature Callout */}
+      <section className="bg-gradient-to-r from-indigo-950 via-slate-900 to-indigo-900 border border-indigo-800/60 rounded-2xl sm:rounded-3xl p-4 sm:p-6 text-white shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center space-x-3.5">
+          <div className="w-11 h-11 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 text-indigo-400 flex items-center justify-center flex-shrink-0">
+            <NotebookPen className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="inline-block text-[10px] font-bold uppercase tracking-wider text-indigo-300 bg-indigo-500/20 px-2 py-0.5 rounded-full mb-1">
+              New Section
+            </div>
+            <h3 className="text-base sm:text-lg font-bold text-white">
+              Subject Wise Important Notes
+            </h3>
+            <p className="text-xs text-slate-300 max-w-xl">
+              Save textbook topics with page numbers. Automatically sorted in ascending page order, with instant filters for Difficult, Important to read, and Frequently coming questions.
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/notes"
+          className="inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-md transition-all touch-manipulation flex-shrink-0 min-h-[40px]"
+        >
+          <span>Open Important Notes</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </section>
+
       {/* 11 Subjects Directory */}
       <section className="space-y-4 sm:space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-              11 Medical Examination Subjects
+              {SUBJECTS_DATA.length} Medical Examination Subjects
             </h2>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
               Select a subject to take authentic Previous BCS questions with explanations
