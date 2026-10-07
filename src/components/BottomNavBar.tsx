@@ -8,8 +8,8 @@ import { Layers, NotebookPen, History, PlusCircle } from "lucide-react";
 export default function BottomNavBar() {
   const pathname = usePathname();
 
-  // If in active exam mode with timer (/exam/[id]), hide bottom bar to prevent distraction
-  if (pathname.startsWith("/exam/")) {
+  // If in active exam mode with timer (/exam/[id]) or on auth pages, hide bottom bar to prevent distraction
+  if (pathname.startsWith("/exam/") || pathname.startsWith("/auth/")) {
     return null;
   }
 

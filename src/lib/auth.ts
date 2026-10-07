@@ -78,8 +78,10 @@ export function setCurrentUser(user: AppUser | null): void {
   if (typeof window === "undefined") return;
   if (user) {
     localStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
+    document.cookie = `bcs_user_id=${encodeURIComponent(user.id)}; path=/; max-age=2592000; SameSite=Lax`;
   } else {
     localStorage.removeItem(AUTH_USER_KEY);
+    document.cookie = "bcs_user_id=; path=/; max-age=0; SameSite=Lax";
   }
 }
 

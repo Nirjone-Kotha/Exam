@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Header from "../components/Header";
 import BottomNavBar from "../components/BottomNavBar";
 import NetworkStatusIndicator from "../components/NetworkStatusIndicator";
+import AuthGuard from "../components/AuthGuard";
 import "../styles/globals.css";
 
 export const viewport: Viewport = {
@@ -46,7 +47,9 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-emerald-500 selection:text-white">
         <Header />
         <NetworkStatusIndicator />
-        <main className="flex-1 w-full pb-20 md:pb-6">{children}</main>
+        <main className="flex-1 w-full pb-20 md:pb-6">
+          <AuthGuard>{children}</AuthGuard>
+        </main>
         <BottomNavBar />
         <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 mb-16 md:mb-0 text-center text-xs text-slate-500 dark:text-slate-400">
           <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">

@@ -84,28 +84,30 @@ export default function Header() {
 
           {/* Right Action: Desktop Nav Links + Auth Status + Install Button */}
           <div className="flex items-center space-x-1.5 sm:space-x-3">
-            {/* Desktop Navigation Links - Hidden on Mobile */}
-            <nav className="hidden md:flex items-center space-x-1 sm:space-x-1.5">
-              {navLinks.map((link) => {
-                const Icon = link.icon;
-                const isActive =
-                  pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`flex items-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all min-h-[38px] ${
-                      isActive
-                        ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800"
-                    }`}
-                  >
-                    <Icon className="w-4 h-4 flex-shrink-0" />
-                    <span>{link.fullLabel}</span>
-                  </Link>
-                );
-              })}
-            </nav>
+            {/* Desktop Navigation Links - Shown only for authenticated users */}
+            {currentUser && (
+              <nav className="hidden md:flex items-center space-x-1 sm:space-x-1.5">
+                {navLinks.map((link) => {
+                  const Icon = link.icon;
+                  const isActive =
+                    pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`flex items-center space-x-1 sm:space-x-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all min-h-[38px] ${
+                        isActive
+                          ? "bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400"
+                          : "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800"
+                      }`}
+                    >
+                      <Icon className="w-4 h-4 flex-shrink-0" />
+                      <span>{link.fullLabel}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
+            )}
 
             {/* User Profile / Sign In Dropdown */}
             <div className="relative" ref={dropdownRef}>
