@@ -17,11 +17,7 @@ import {
   Microscope,
   Pill,
   Bug,
-  Clock,
-  Shuffle,
-  AlertCircle,
   FileCheck2,
-  TrendingUp,
   ArrowRight,
   Sparkles,
   Award,
@@ -63,43 +59,19 @@ export default function HomePage() {
   );
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-10 space-y-6 sm:space-y-10 overflow-x-hidden">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8">
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white p-5 sm:p-12 shadow-xl">
-        <div className="relative z-10 max-w-3xl space-y-4 sm:space-y-6">
+      <section className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white p-5 sm:p-8 shadow-xl">
+        <div className="relative z-10 max-w-3xl space-y-2.5 sm:space-y-4">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] sm:text-sm font-semibold border border-emerald-500/30 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
             <span>BCS & Post-Graduate Medical Residency Portal</span>
           </div>
 
-          <h1 className="text-2xl sm:text-5xl font-black tracking-tight leading-tight">
+          <h1 className="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
             High-Yield Medical & BCS Exam Simulation
           </h1>
-
-          <p className="text-slate-300 text-xs sm:text-base leading-relaxed max-w-2xl">
-            Real exam simulation featuring 300+ authentic Previous BCS questions, dynamic shuffling on every attempt, sticky countdown timer (MCQs ÷ 2 mins), -0.5 negative marking, instant answers with detailed explanations, and attempt comparison.
-          </p>
-
-          {/* Key Features Badges - 2x2 grid on mobile */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-1">
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-md p-2.5 sm:px-3 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-white/10">
-              <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" />
-              <span>Time: MCQs ÷ 2 mins</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-md p-2.5 sm:px-3 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-white/10">
-              <Shuffle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" />
-              <span>Dynamic Shuffle</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-md p-2.5 sm:px-3 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-white/10">
-              <AlertCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 flex-shrink-0" />
-              <span>-0.5 Negative Mark</span>
-            </div>
-            <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-md p-2.5 sm:px-3 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold border border-white/10">
-              <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-teal-400 flex-shrink-0" />
-              <span>Attempt Compare</span>
-            </div>
-          </div>
         </div>
 
         {/* Decorative backdrop shapes */}

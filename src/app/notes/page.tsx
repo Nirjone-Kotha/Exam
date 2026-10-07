@@ -72,7 +72,7 @@ export default function NotesIndexPage() {
   const totalNotesCount = allNotes.length;
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8 overflow-x-hidden">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8">
       {/* Header Banner */}
       <section className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-5 sm:p-10 shadow-xl">
         <div className="relative z-10 max-w-3xl space-y-3 sm:space-y-4">

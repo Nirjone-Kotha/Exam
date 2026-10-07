@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="overflow-x-hidden max-w-full">
+    <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="application-name" content="MedExam BCS" />
@@ -43,12 +43,12 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#0f172a" />
       </head>
-      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-emerald-500 selection:text-white overflow-x-hidden max-w-full w-full">
+      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 antialiased selection:bg-emerald-500 selection:text-white">
         <Header />
         <NetworkStatusIndicator />
-        <main className="flex-1 w-full max-w-full overflow-x-hidden pb-16 md:pb-0">{children}</main>
+        <main className="flex-1 w-full pb-20 md:pb-6">{children}</main>
         <BottomNavBar />
-        <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 mb-14 md:mb-0 text-center text-xs text-slate-500 dark:text-slate-400">
+        <footer className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6 mb-16 md:mb-0 text-center text-xs text-slate-500 dark:text-slate-400">
           <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
             <span>© {new Date().getFullYear()} MedExam BCS Portal • Built for High Performance</span>
             <span>Vercel Optimized • Neon Postgres & Upstash Redis Ready</span>
