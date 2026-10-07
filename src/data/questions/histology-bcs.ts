@@ -12,7 +12,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Transitional epithelium (urothelium) lines the renal calyces, renal pelvis, ureters, urinary bladder, and proximal part of the urethra. It is a specialized stratified epithelium capable of significant stretching and accommodates volume fluctuations while acting as an impermeable osmotic barrier.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Epithelial Tissue"
   },
   {
@@ -26,7 +26,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Pseudostratified ciliated columnar epithelium lines the trachea and large bronchi (respiratory epithelium). Although all cells touch the basement membrane, their nuclei lie at different heights giving a false stratified appearance. Cilia and goblet cells coordinate the mucociliary escalator.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Epithelial Tissue"
   },
   {
@@ -40,7 +40,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Oligodendrocytes myelinate axons in the central nervous system (CNS), with a single oligodendrocyte extending processes to myelinate segments of up to 40-50 different axons. In contrast, Schwann cells myelinate axons in the peripheral nervous system (PNS).",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Nervous Tissue"
   },
   {
@@ -54,7 +54,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Hassall's corpuscles are concentric whorls of eosinophilic, keratinized epithelial reticular cells unique to the medulla of the thymus gland. They play roles in dendritic cell maturation and the development of regulatory T cells (Tregs).",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Lymphoid System"
   },
   {
@@ -68,7 +68,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Intercalated discs are specialized junctional complexes that connect adjacent cardiomyocytes end-to-end. Fascia adherens anchor actin filaments, desmosomes prevent cell separation during vigorous contraction, and gap junctions provide low electrical resistance for syncytial depolarization.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Muscular Tissue"
   },
   {
@@ -82,7 +82,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Auerbach's (myenteric) plexus is located in the muscularis externa between the inner circular and outer longitudinal smooth muscle layers and primarily regulates GI motility. Meissner's plexus is situated in the submucosa and regulates mucosal secretions and local blood flow.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Gastrointestinal Histology"
   },
   {
@@ -96,7 +96,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Peyer's patches are prominent aggregates of non-encapsulated lymphoid follicles predominantly found in the antimesenteric border of the ileum. They are overlaid by follicle-associated epithelium containing specialized antigen-sampling M (microfold) cells.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Gastrointestinal Histology"
   },
   {
@@ -110,7 +110,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Mnemonic: 'GFR corresponds to Salt, Sugar, Sex': Zona Glomerulosa secretes mineralocorticoids (Aldosterone - Salt); Zona Fasciculata secretes glucocorticoids (Cortisol - Sugar); Zona Reticularis secretes androgens (Sex steroids); Medulla secretes catecholamines.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Endocrine Histology"
   },
   {
@@ -124,7 +124,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Hyaline cartilage has a smooth, semi-translucent, glassy appearance (hyalos = glass) containing Type II collagen and chondroitin sulfate proteoglycans. It is found in articular surfaces, tracheal rings, thyroid and cricoid cartilages, and costal cartilages.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Cartilage & Bone"
   },
   {
@@ -138,7 +138,7 @@ export const HISTOLOGY_BCS_QUESTIONS: Question[] = [
     ],
     correctAnswer: 0,
     explanation: "Juxtaglomerular (JG) cells (or granular cells) are specialized, modified smooth muscle cells situated predominantly in the tunica media of the afferent arteriole near the glomerulus. They sense renal perfusion pressure and release renin in response to hypoperfusion or sympathetic stimulation.",
-    subject: "Histology",
+    subject: "Histology and Embryology",
     topic: "Renal Histology"
   }
 ];

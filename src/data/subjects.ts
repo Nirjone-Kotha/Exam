@@ -224,9 +224,9 @@ export const SUBJECTS_DATA: Subject[] = [
   },
   {
     id: "histology",
-    name: "Histology",
-    slug: "histology",
-    description: "Microscopic Anatomy, Epithelial, Connective, Muscular & Nervous Tissues, and Organ Microarchitecture",
+    name: "Histology and Embryology",
+    slug: "histology-and-embryology",
+    description: "Microscopic Anatomy, Epithelial, Connective, Muscular & Nervous Tissues, Embryology, and Organ Microarchitecture",
     icon: "Microscope",
     accentColor: "from-fuchsia-600 to-pink-700",
     exams: [
@@ -234,8 +234,8 @@ export const SUBJECTS_DATA: Subject[] = [
         id: "histology-bcs-prev",
         title: "Previous BCS Questions",
         subjectId: "histology",
-        subjectName: "Histology",
-        description: "Authentic Previous Special BCS and residency microscopic anatomy questions with comprehensive tissue explanations.",
+        subjectName: "Histology and Embryology",
+        description: "Authentic Previous Special BCS and residency microscopic anatomy and embryology questions with comprehensive explanations.",
         negativeMark: 0.5,
         questions: HISTOLOGY_BCS_QUESTIONS
       }
@@ -246,13 +246,18 @@ export const SUBJECTS_DATA: Subject[] = [
 export function getSubjectBySlug(slug?: string): Subject | undefined {
   if (!slug) return undefined;
   const target = slug.toLowerCase().trim();
-  return SUBJECTS_DATA.find(
-    (s) =>
-      s.slug.toLowerCase() === target ||
-      s.id.toLowerCase() === target ||
-      s.slug.toLowerCase().replace(/[-_]/g, "") === target.replace(/[-_]/g, "") ||
-      s.id.toLowerCase().replace(/[-_]/g, "") === target.replace(/[-_]/g, "")
-  );
+  return SUBJECTS_DATA.find((s) => {
+    const sSlug = s.slug.toLowerCase();
+    const sId = s.id.toLowerCase();
+    const sName = s.name.toLowerCase();
+    if (sSlug === target || sId === target || sName === target) return true;
+    if (sSlug.replace(/[-_]/g, "") === target.replace(/[-_]/g, "")) return true;
+    if (sId.replace(/[-_]/g, "") === target.replace(/[-_]/g, "")) return true;
+    if (s.id === "histology" && (target === "histology" || target === "histology-and-embryology" || target.includes("embryology"))) {
+      return true;
+    }
+    return false;
+  });
 }
 
 export function getExamById(examId: string): { exam: Exam; subject: Subject } | undefined {
