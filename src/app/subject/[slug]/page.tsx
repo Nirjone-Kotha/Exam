@@ -45,14 +45,14 @@ export default function SubjectDetailPage() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-12 space-y-6 sm:space-y-8">
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8 overflow-x-hidden">
       {/* Back button & Subject Title Header */}
       <div>
         <Link
           href="/"
           className="inline-flex items-center text-xs font-semibold text-slate-500 hover:text-slate-800 dark:hover:text-white mb-3 transition-colors touch-manipulation min-h-[32px]"
         >
-          <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Back to 11 Subjects
+          <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Back to All Subjects
         </Link>
 
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-sm">

@@ -63,7 +63,7 @@ export default function HomePage() {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-12 space-y-8 sm:space-y-12">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-10 space-y-6 sm:space-y-10 overflow-x-hidden">
       
       {/* Hero Section */}
       <section className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-950 text-white p-5 sm:p-12 shadow-xl">
@@ -103,7 +103,7 @@ export default function HomePage() {
         </div>
 
         {/* Decorative backdrop shapes */}
-        <div className="absolute -right-10 -bottom-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-0 bottom-0 w-72 h-72 sm:w-96 sm:h-96 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
       </section>
 
       {/* Recent Attempts Quick View */}

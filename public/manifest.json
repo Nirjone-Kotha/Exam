@@ -5,10 +5,34 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "orientation": "portrait-primary",
   "background_color": "#0f172a",
-  "theme_color": "#059669",
+  "theme_color": "#0f172a",
   "categories": ["education", "medical"],
+  "shortcuts": [
+    {
+      "name": "Important Notes",
+      "short_name": "Notes",
+      "description": "Quickly access subject-wise textbook notes",
+      "url": "/notes",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Take Exam",
+      "short_name": "Exams",
+      "description": "Start a BCS medical exam simulation",
+      "url": "/",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Analytics & History",
+      "short_name": "History",
+      "description": "View past attempts and performance metrics",
+      "url": "/history",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
   "icons": [
     {
       "src": "/icons/icon-192x192.png",

@@ -34,7 +34,7 @@ export default function StickyExamHeader({
   const progressPercent = Math.min(100, Math.round((answeredCount / totalQuestions) * 100));
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all touch-manipulation">
+    <header className="sticky top-0 z-40 w-full max-w-full overflow-hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all touch-manipulation">
       {/* Top micro progress bar */}
       <div className="w-full bg-slate-100 dark:bg-slate-800 h-1 sm:h-1.5">
         <div

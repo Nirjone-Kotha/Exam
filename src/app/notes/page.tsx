@@ -72,7 +72,7 @@ export default function NotesIndexPage() {
   const totalNotesCount = allNotes.length;
 
   return (
-    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-10 space-y-6 sm:space-y-8">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-6 sm:space-y-8 overflow-x-hidden">
       {/* Header Banner */}
       <section className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-5 sm:p-10 shadow-xl">
         <div className="relative z-10 max-w-3xl space-y-3 sm:space-y-4">
@@ -118,7 +118,7 @@ export default function NotesIndexPage() {
           </div>
         </div>
 
-        <div className="absolute -right-10 -bottom-10 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-0 bottom-0 w-72 h-72 sm:w-80 sm:h-80 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
       </section>
 
       {/* Search and Subject Cards */}

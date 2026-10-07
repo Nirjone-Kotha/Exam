@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Download, X, Smartphone, Check } from "lucide-react";
+import { Download, X, Smartphone } from "lucide-react";
 
 export default function PWAInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
@@ -88,35 +88,36 @@ export default function PWAInstallPrompt() {
     localStorage.setItem("pwa_banner_dismissed", "true");
   };
 
-  if (isStandalone) {
+  if (isStandalone || isInstalled) {
     return null; // Don't show prompts if already running as an installed PWA
   }
 
   return (
     <>
-      {/* Header Install Button */}
+      {/* Header Install Button (Compact on mobile, full label on desktop) */}
       <button
         type="button"
         onClick={handleInstallClick}
         title="Install MedExam BCS on your device"
-        className="hidden sm:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm shadow-emerald-600/30 transition-all active:scale-95 touch-manipulation min-h-[36px]"
+        className="inline-flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-sm shadow-emerald-600/30 transition-all active:scale-95 touch-manipulation min-h-[36px] flex-shrink-0"
       >
         <Download className="w-3.5 h-3.5" />
-        <span>Install App</span>
+        <span className="hidden sm:inline">Install App</span>
+        <span className="sm:hidden text-[11px]">Install</span>
       </button>
 
-      {/* Mobile Floating Bottom Banner */}
-      {showBanner && !isInstalled && (
-        <div className="fixed bottom-3 left-3 right-3 sm:hidden z-50 animate-slide-up">
+      {/* Mobile Floating Bottom Banner (positioned safely above BottomNavBar) */}
+      {showBanner && (
+        <div className="fixed bottom-16 left-3 right-3 md:hidden z-40 animate-slide-up">
           <div className="bg-slate-900/95 text-white backdrop-blur-md border border-slate-700 rounded-2xl p-3.5 shadow-2xl flex items-center justify-between gap-3">
             <div className="flex items-center space-x-2.5 min-w-0">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center flex-shrink-0 shadow-md">
-                <Smartphone className="w-5 h-5 text-white" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center flex-shrink-0 shadow-md">
+                <Smartphone className="w-4 h-4 text-white" />
               </div>
               <div className="min-w-0">
-                <h4 className="text-xs font-bold text-white truncate">Install MedExam BCS</h4>
+                <h4 className="text-xs font-bold text-white truncate">Install Android PWA</h4>
                 <p className="text-[10px] text-slate-300 truncate">
-                  Offline use & fullscreen experience
+                  Offline use & native fullscreen experience
                 </p>
               </div>
             </div>

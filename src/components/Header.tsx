@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Award, History, Layers, PlusCircle, NotebookPen } from "lucide-react";
@@ -16,16 +17,16 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/95 shadow-sm touch-manipulation">
+    <header className="sticky top-0 z-40 w-full max-w-full overflow-hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/95 shadow-sm touch-manipulation">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16 w-full">
           
-          {/* Logo & Brand */}
+          {/* Logo & Brand - Always fully visible and never pushed off */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group flex-shrink-0">
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
               <Award className="w-4 h-4 sm:w-6 sm:h-6" />
             </div>
-            <div>
+            <div className="flex items-center">
               <span className="font-extrabold text-base sm:text-xl tracking-tight bg-gradient-to-r from-slate-900 to-emerald-800 dark:from-white dark:to-emerald-400 bg-clip-text text-transparent">
                 MedExam BCS
               </span>
@@ -35,9 +36,10 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Navigation Items + Install Button */}
+          {/* Right Action: Desktop Nav Links (hidden on mobile) + Install Button */}
           <div className="flex items-center space-x-2 sm:space-x-3">
-            <nav className="flex items-center space-x-1 sm:space-x-1.5">
+            {/* Desktop Navigation Links - Hidden on Mobile because of Bottom Navigation */}
+            <nav className="hidden md:flex items-center space-x-1 sm:space-x-1.5">
               {navLinks.map((link) => {
                 const Icon = link.icon;
                 const isActive =
@@ -53,14 +55,13 @@ export default function Header() {
                     }`}
                   >
                     <Icon className="w-4 h-4 flex-shrink-0" />
-                    <span className="inline md:hidden">{link.label}</span>
-                    <span className="hidden md:inline">{link.fullLabel}</span>
+                    <span>{link.fullLabel}</span>
                   </Link>
                 );
               })}
             </nav>
 
-            {/* PWA Install Button */}
+            {/* PWA Install Button (Responsive for both Mobile & Desktop) */}
             <PWAInstallPrompt />
           </div>
 
