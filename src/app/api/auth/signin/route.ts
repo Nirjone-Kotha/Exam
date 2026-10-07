@@ -24,6 +24,8 @@ export async function POST(request: NextRequest) {
     }
 
     const cleanIdentifier = identifier.trim().toLowerCase();
+    const isEmail = cleanIdentifier.includes("@");
+    const identifierType = isEmail ? "email" : "phone";
 
     const sql = getNeonSql();
     if (!sql) {
@@ -39,35 +41,68 @@ export async function POST(request: NextRequest) {
 
     const passwordHash = hashServerPassword(password);
 
+    // 1. Check if user already exists
     const rows = await sql`
-      SELECT id, name, identifier, identifier_type AS "identifierType", created_at AS "createdAt"
+      SELECT id, name, identifier, identifier_type AS "identifierType", created_at AS "createdAt", password_hash AS "passwordHash"
       FROM app_users
-      WHERE LOWER(identifier) = ${cleanIdentifier} AND password_hash = ${passwordHash}
+      WHERE LOWER(identifier) = ${cleanIdentifier}
       LIMIT 1;
     `;
 
-    if (rows.length === 0) {
-      return NextResponse.json(
-        { success: false, error: "ভুল ইমেইল/ফোন অথবা পাসওয়ার্ড। অনুগ্রহ করে আবার চেষ্টা করুন।" },
-        { status: 401 }
-      );
+    let user: any;
+
+    if (rows.length > 0) {
+      const dbUser = rows[0];
+      if (dbUser.passwordHash !== passwordHash) {
+        return NextResponse.json(
+          { success: false, error: "ভুল পাসওয়ার্ড। অনুগ্রহ করে আবার চেষ্টা করুন।" },
+          { status: 401 }
+        );
+      }
+      user = {
+        id: dbUser.id,
+        name: dbUser.name,
+        identifier: dbUser.identifier,
+        identifierType: dbUser.identifierType,
+        createdAt: Number(dbUser.createdAt),
+      };
+    } else {
+      // 2. Auto-register new user on sign in
+      const userId = `usr_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
+      const displayName = isEmail ? cleanIdentifier.split("@")[0] : `Dr. ${cleanIdentifier.slice(-4)}`;
+      const now = Date.now();
+
+      await sql`
+        INSERT INTO app_users (id, name, identifier, identifier_type, password_hash, created_at, updated_at)
+        VALUES (${userId}, ${displayName}, ${cleanIdentifier}, ${identifierType}, ${passwordHash}, ${now}, ${now});
+      `;
+
+      user = {
+        id: userId,
+        name: displayName,
+        identifier: cleanIdentifier,
+        identifierType,
+        createdAt: now,
+      };
     }
 
-    const dbUser = rows[0];
-    const user = {
-      id: dbUser.id,
-      name: dbUser.name,
-      identifier: dbUser.identifier,
-      identifierType: dbUser.identifierType,
-      createdAt: Number(dbUser.createdAt),
-    };
-
     const response = NextResponse.json({ success: true, user });
+
+    // Set both cookies with 30-day lifetime
     response.cookies.set("bcs_user_id", user.id, {
       httpOnly: false,
       secure: process.env.NODE_ENV === "production",
-      maxAge: 60 * 60 * 24 * 30, // 30 days
+      maxAge: 60 * 60 * 24 * 30,
       path: "/",
+      sameSite: "lax",
+    });
+
+    response.cookies.set("bcs_user_data", encodeURIComponent(JSON.stringify(user)), {
+      httpOnly: false,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 60 * 60 * 24 * 30,
+      path: "/",
+      sameSite: "lax",
     });
 
     return response;

@@ -83,6 +83,15 @@ export async function POST(request: NextRequest) {
       secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24 * 30, // 30 days
       path: "/",
+      sameSite: "lax",
+    });
+
+    response.cookies.set("bcs_user_data", encodeURIComponent(JSON.stringify(user)), {
+      httpOnly: false,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 60 * 60 * 24 * 30, // 30 days
+      path: "/",
+      sameSite: "lax",
     });
 
     return response;

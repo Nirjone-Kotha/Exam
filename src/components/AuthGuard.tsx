@@ -15,7 +15,9 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     const isAuthRoute = pathname.startsWith("/auth/signin") || pathname.startsWith("/auth/signup");
 
     const user = getCurrentUser();
-    const hasCookie = typeof document !== "undefined" && document.cookie.includes("bcs_user_id");
+    const hasCookie =
+      typeof document !== "undefined" &&
+      (document.cookie.includes("bcs_user_id") || document.cookie.includes("bcs_user_data"));
 
     const authenticated = Boolean(user || hasCookie);
 

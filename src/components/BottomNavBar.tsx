@@ -1,14 +1,34 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Layers, NotebookPen, History, PlusCircle } from "lucide-react";
+import { Layers, NotebookPen, History, PlusCircle, User } from "lucide-react";
+import ProfileModal from "./ProfileModal";
+import { getCurrentUser } from "@/lib/auth";
+import { AppUser } from "@/lib/types";
 
 export default function BottomNavBar() {
   const pathname = usePathname();
+  const [currentUser, setCurrentUser] = useState<AppUser | null>(null);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
-  // If in active exam mode with timer (/exam/[id]) or on auth pages, hide bottom bar to prevent distraction
+  useEffect(() => {
+    const updateUser = () => {
+      setCurrentUser(getCurrentUser());
+    };
+    updateUser();
+
+    window.addEventListener("bcs-auth-changed", updateUser);
+    window.addEventListener("storage", updateUser);
+
+    return () => {
+      window.removeEventListener("bcs-auth-changed", updateUser);
+      window.removeEventListener("storage", updateUser);
+    };
+  }, [pathname]);
+
+  // If in active exam mode with timer (/exam/[id]) or on auth pages, hide bottom bar
   if (pathname.startsWith("/exam/") || pathname.startsWith("/auth/")) {
     return null;
   }
@@ -47,42 +67,85 @@ export default function BottomNavBar() {
   };
 
   return (
-    <nav
-      aria-label="Mobile Navigation"
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200/80 dark:border-slate-800 shadow-[0_-4px_25px_rgba(0,0,0,0.08)] pb-[max(env(safe-area-inset-bottom),0px)]"
-    >
-      <div className="grid grid-cols-4 h-14 max-w-lg mx-auto px-2 items-center">
-        {navItems.map((item) => {
-          const Icon = item.icon;
-          const active = item.isActive;
+    <>
+      <nav
+        aria-label="Mobile Navigation"
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200/80 dark:border-slate-800 shadow-[0_-4px_25px_rgba(0,0,0,0.08)] pb-[max(env(safe-area-inset-bottom),0px)]"
+      >
+        <div className="grid grid-cols-5 h-14 max-w-lg mx-auto px-1 items-center">
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const active = item.isActive;
 
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={handleTouch}
-              className={`flex flex-col items-center justify-center h-full py-1 rounded-xl transition-all select-none touch-manipulation active:scale-95 ${
-                active
-                  ? "text-emerald-700 dark:text-emerald-400 font-bold"
-                  : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium"
-              }`}
-            >
-              <div
-                className={`flex items-center justify-center px-3 py-1 rounded-full transition-colors ${
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={handleTouch}
+                className={`flex flex-col items-center justify-center h-full py-1 rounded-xl transition-all select-none touch-manipulation active:scale-95 ${
                   active
-                    ? "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400"
-                    : "text-slate-500 dark:text-slate-400"
+                    ? "text-emerald-700 dark:text-emerald-400 font-bold"
+                    : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium"
                 }`}
               >
-                <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <span className="text-[10px] leading-tight mt-0.5 tracking-tight">
-                {item.label}
-              </span>
-            </Link>
-          );
-        })}
-      </div>
-    </nav>
+                <div
+                  className={`flex items-center justify-center px-2.5 py-1 rounded-full transition-colors ${
+                    active
+                      ? "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400"
+                      : "text-slate-500 dark:text-slate-400"
+                  }`}
+                >
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <span className="text-[10px] leading-tight mt-0.5 tracking-tight">
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+
+          {/* Profile Tab in Bottom Bar */}
+          <button
+            type="button"
+            onClick={() => {
+              handleTouch();
+              setIsProfileOpen(true);
+            }}
+            className={`flex flex-col items-center justify-center h-full py-1 rounded-xl transition-all select-none touch-manipulation active:scale-95 ${
+              isProfileOpen
+                ? "text-emerald-700 dark:text-emerald-400 font-bold"
+                : "text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white font-medium"
+            }`}
+          >
+            <div
+              className={`flex items-center justify-center px-2.5 py-1 rounded-full transition-colors ${
+                isProfileOpen
+                  ? "bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400"
+                  : "text-slate-500 dark:text-slate-400"
+              }`}
+            >
+              {currentUser ? (
+                <div className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[9px] font-bold">
+                  {currentUser.name.charAt(0).toUpperCase()}
+                </div>
+              ) : (
+                <User className="w-4 h-4 sm:w-5 sm:h-5" />
+              )}
+            </div>
+            <span className="text-[10px] leading-tight mt-0.5 tracking-tight">
+              Profile
+            </span>
+          </button>
+        </div>
+      </nav>
+
+      {/* Profile Modal for Mobile Bottom Bar */}
+      <ProfileModal
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+        user={currentUser}
+        onUserUpdate={(updated) => setCurrentUser(updated)}
+      />
+    </>
   );
 }

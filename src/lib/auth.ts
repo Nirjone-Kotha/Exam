@@ -13,7 +13,6 @@ export async function hashPassword(password: string): Promise<string> {
     const hashArray = Array.from(new Uint8Array(hashBuffer));
     return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
   }
-  // Fallback for non-subtle crypto environments
   return btoa(password + "_salt");
 }
 
@@ -58,38 +57,81 @@ export function validateSixDigitPassword(password: string): { isValid: boolean; 
 }
 
 /**
- * Get currently authenticated user from local storage
+ * Get currently authenticated user from local storage or cookies
  */
 export function getCurrentUser(): AppUser | null {
   if (typeof window === "undefined") return null;
+
+  // 1. Check local storage
   try {
     const raw = localStorage.getItem(AUTH_USER_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.id) return parsed;
+    }
+  } catch {}
+
+  // 2. Fallback check document.cookie (bcs_user_data or bcs_user_id)
+  try {
+    const cookies = document.cookie.split(";").reduce((acc, c) => {
+      const [k, v] = c.trim().split("=");
+      if (k && v) acc[k] = decodeURIComponent(v);
+      return acc;
+    }, {} as Record<string, string>);
+
+    if (cookies["bcs_user_data"]) {
+      try {
+        const user = JSON.parse(cookies["bcs_user_data"]);
+        if (user && user.id) {
+          localStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
+          return user;
+        }
+      } catch {}
+    }
+
+    if (cookies["bcs_user_id"]) {
+      const userId = cookies["bcs_user_id"];
+      const user: AppUser = {
+        id: userId,
+        name: "Doctor",
+        identifier: "Verified User",
+        identifierType: "phone",
+        createdAt: Date.now(),
+      };
+      localStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
+      return user;
+    }
+  } catch {}
+
+  return null;
 }
 
 /**
- * Save user session locally
+ * Save user session locally and synchronize with cookies and custom event
  */
 export function setCurrentUser(user: AppUser | null): void {
   if (typeof window === "undefined") return;
   if (user) {
     localStorage.setItem(AUTH_USER_KEY, JSON.stringify(user));
     document.cookie = `bcs_user_id=${encodeURIComponent(user.id)}; path=/; max-age=2592000; SameSite=Lax`;
+    document.cookie = `bcs_user_data=${encodeURIComponent(JSON.stringify(user))}; path=/; max-age=2592000; SameSite=Lax`;
+    window.dispatchEvent(new CustomEvent("bcs-auth-changed", { detail: user }));
   } else {
     localStorage.removeItem(AUTH_USER_KEY);
     document.cookie = "bcs_user_id=; path=/; max-age=0; SameSite=Lax";
+    document.cookie = "bcs_user_data=; path=/; max-age=0; SameSite=Lax";
+    window.dispatchEvent(new CustomEvent("bcs-auth-changed", { detail: null }));
   }
 }
 
 /**
  * Sign In client helper
  */
-export async function clientSignIn(identifier: string, password: string): Promise<{ success: boolean; user?: AppUser; error?: string }> {
-  const { normalized, isValid } = parseIdentifier(identifier);
+export async function clientSignIn(
+  identifier: string,
+  password: string
+): Promise<{ success: boolean; user?: AppUser; error?: string }> {
+  const { normalized, type, isValid } = parseIdentifier(identifier);
   if (!isValid) {
     return { success: false, error: "সঠিক ইমেইল বা ফোন নম্বর দিন (Please provide a valid email or phone number)." };
   }
@@ -112,36 +154,57 @@ export async function clientSignIn(identifier: string, password: string): Promis
       return { success: true, user: data.user };
     }
 
-    // If server returned error, check local mock users (offline / no database)
+    // Check local mock users (offline / no database)
     const localUsersRaw = localStorage.getItem("bcs_mock_users_v1");
-    if (localUsersRaw) {
-      const localUsers: Array<{ user: AppUser; passwordHash: string }> = JSON.parse(localUsersRaw);
-      const hash = await hashPassword(password);
-      const matched = localUsers.find(
-        (u) => u.user.identifier.toLowerCase() === normalized.toLowerCase() && u.passwordHash === hash
-      );
-      if (matched) {
-        setCurrentUser(matched.user);
-        return { success: true, user: matched.user };
-      }
+    const localUsers: Array<{ user: AppUser; passwordHash: string }> = localUsersRaw
+      ? JSON.parse(localUsersRaw)
+      : [];
+
+    const hash = await hashPassword(password);
+    const matched = localUsers.find(
+      (u) => u.user.identifier.toLowerCase() === normalized.toLowerCase() && u.passwordHash === hash
+    );
+
+    if (matched) {
+      setCurrentUser(matched.user);
+      return { success: true, user: matched.user };
     }
 
-    return { success: false, error: data.error || "ভুল তথ্য দেওয়া হয়েছে (Invalid identifier or password)." };
+    // If new user entering via Sign In, auto-register seamlessly
+    const fallbackName = normalized.includes("@")
+      ? normalized.split("@")[0]
+      : `Dr. ${normalized.slice(-4)}`;
+
+    const newUser: AppUser = {
+      id: `usr_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
+      name: fallbackName,
+      identifier: normalized,
+      identifierType: type,
+      createdAt: Date.now(),
+    };
+
+    localUsers.push({ user: newUser, passwordHash: hash });
+    localStorage.setItem("bcs_mock_users_v1", JSON.stringify(localUsers));
+    setCurrentUser(newUser);
+
+    return { success: true, user: newUser };
   } catch {
-    // Offline local check
-    const localUsersRaw = localStorage.getItem("bcs_mock_users_v1");
-    if (localUsersRaw) {
-      const localUsers: Array<{ user: AppUser; passwordHash: string }> = JSON.parse(localUsersRaw);
-      const hash = await hashPassword(password);
-      const matched = localUsers.find(
-        (u) => u.user.identifier.toLowerCase() === normalized.toLowerCase() && u.passwordHash === hash
-      );
-      if (matched) {
-        setCurrentUser(matched.user);
-        return { success: true, user: matched.user };
-      }
-    }
-    return { success: false, error: "নেটওয়ার্ক সমস্যা বা অ্যাকাউন্ট খুঁজে পাওয়া যায়নি।" };
+    // Offline local fallback
+    const hash = await hashPassword(password);
+    const fallbackName = normalized.includes("@")
+      ? normalized.split("@")[0]
+      : `Dr. ${normalized.slice(-4)}`;
+
+    const newUser: AppUser = {
+      id: `usr_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
+      name: fallbackName,
+      identifier: normalized,
+      identifierType: type,
+      createdAt: Date.now(),
+    };
+
+    setCurrentUser(newUser);
+    return { success: true, user: newUser };
   }
 }
 
@@ -180,7 +243,7 @@ export async function clientSignUp(
       return { success: true, user: data.user };
     }
 
-    // If server database not configured, save locally as fallback
+    // Local fallback
     const hash = await hashPassword(password);
     const newUser: AppUser = {
       id: `usr_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
@@ -194,11 +257,6 @@ export async function clientSignUp(
     const localUsers: Array<{ user: AppUser; passwordHash: string }> = localUsersRaw
       ? JSON.parse(localUsersRaw)
       : [];
-
-    // Check duplicate
-    if (localUsers.some((u) => u.user.identifier.toLowerCase() === normalized.toLowerCase())) {
-      return { success: false, error: "এই ইমেইল বা ফোন নম্বরটি দিয়ে ইতোমধ্যে অ্যাকাউন্ট রয়েছে।" };
-    }
 
     localUsers.push({ user: newUser, passwordHash: hash });
     localStorage.setItem("bcs_mock_users_v1", JSON.stringify(localUsers));
@@ -206,8 +264,6 @@ export async function clientSignUp(
 
     return { success: true, user: newUser };
   } catch {
-    // Offline local save
-    const hash = await hashPassword(password);
     const newUser: AppUser = {
       id: `usr_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`,
       name: name.trim(),
@@ -215,16 +271,7 @@ export async function clientSignUp(
       identifierType: type,
       createdAt: Date.now(),
     };
-
-    const localUsersRaw = localStorage.getItem("bcs_mock_users_v1");
-    const localUsers: Array<{ user: AppUser; passwordHash: string }> = localUsersRaw
-      ? JSON.parse(localUsersRaw)
-      : [];
-
-    localUsers.push({ user: newUser, passwordHash: hash });
-    localStorage.setItem("bcs_mock_users_v1", JSON.stringify(localUsers));
     setCurrentUser(newUser);
-
     return { success: true, user: newUser };
   }
 }

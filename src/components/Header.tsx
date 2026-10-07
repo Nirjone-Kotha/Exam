@@ -3,8 +3,20 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Award, History, Layers, PlusCircle, NotebookPen, LogIn, User, LogOut, ChevronDown } from "lucide-react";
+import {
+  Award,
+  History,
+  Layers,
+  PlusCircle,
+  NotebookPen,
+  LogIn,
+  User,
+  LogOut,
+  ChevronDown,
+  Settings
+} from "lucide-react";
 import PWAInstallPrompt from "./PWAInstallPrompt";
+import ProfileModal from "./ProfileModal";
 import { getCurrentUser, clientSignOut } from "@/lib/auth";
 import { AppUser } from "@/lib/types";
 
@@ -12,17 +24,22 @@ export default function Header() {
   const pathname = usePathname();
   const [currentUser, setCurrentUser] = useState<AppUser | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load current user
-    setCurrentUser(getCurrentUser());
-
-    // Listen to storage events to sync across tabs
-    const handleStorage = () => {
-      setCurrentUser(getCurrentUser());
+    const updateUser = () => {
+      const user = getCurrentUser();
+      if (user) {
+        setCurrentUser(user);
+      }
     };
-    window.addEventListener("storage", handleStorage);
+
+    updateUser();
+
+    // Listen to custom auth events and storage events
+    window.addEventListener("bcs-auth-changed", updateUser);
+    window.addEventListener("storage", updateUser);
 
     // Also check server auth session
     fetch("/api/auth/me")
@@ -43,16 +60,17 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("bcs-auth-changed", updateUser);
+      window.removeEventListener("storage", updateUser);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [pathname]);
 
   const handleSignOut = async () => {
     await clientSignOut();
     setCurrentUser(null);
     setDropdownOpen(false);
-    window.location.reload();
+    window.location.href = "/auth/signin";
   };
 
   const navLinks = [
@@ -129,8 +147,8 @@ export default function Header() {
 
                   {/* Dropdown Menu */}
                   {dropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl py-2 z-50 text-xs">
-                      <div className="px-4 py-2 border-b border-slate-100 dark:border-slate-800">
+                    <div className="absolute right-0 mt-2 w-60 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl py-2 z-50 text-xs">
+                      <div className="px-4 py-2.5 border-b border-slate-100 dark:border-slate-800">
                         <p className="font-bold text-slate-900 dark:text-white truncate">
                           {currentUser.name}
                         </p>
@@ -143,6 +161,18 @@ export default function Header() {
                       </div>
 
                       <div className="py-1">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            setIsProfileModalOpen(true);
+                          }}
+                          className="w-full flex items-center space-x-2 px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 font-bold"
+                        >
+                          <User className="w-3.5 h-3.5 text-emerald-600" />
+                          <span>আমার প্রোফাইল (My Profile)</span>
+                        </button>
+
                         <Link
                           href="/notes"
                           onClick={() => setDropdownOpen(false)}
@@ -151,6 +181,7 @@ export default function Header() {
                           <NotebookPen className="w-3.5 h-3.5 text-indigo-500" />
                           <span>আমার নোটস (My Notes)</span>
                         </Link>
+
                         <Link
                           href="/history"
                           onClick={() => setDropdownOpen(false)}
@@ -191,6 +222,14 @@ export default function Header() {
 
         </div>
       </div>
+
+      {/* Interactive Profile Modal */}
+      <ProfileModal
+        isOpen={isProfileModalOpen}
+        onClose={() => setIsProfileModalOpen(false)}
+        user={currentUser}
+        onUserUpdate={(updated) => setCurrentUser(updated)}
+      />
     </header>
   );
 }

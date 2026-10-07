@@ -5,5 +5,6 @@ export const dynamic = "force-dynamic";
 export async function POST() {
   const response = NextResponse.json({ success: true });
   response.cookies.delete("bcs_user_id");
+  response.cookies.delete("bcs_user_data");
   return response;
 }

@@ -56,9 +56,8 @@ function SignInContent() {
           navigator.vibrate([15, 50, 15]);
         }
         setTimeout(() => {
-          router.push(redirectUrl);
-          router.refresh();
-        }, 800);
+          window.location.href = redirectUrl;
+        }, 500);
       } else {
         setErrorMessage(res.error || "লগইন ব্যর্থ হয়েছে। তথ্য যাচাই করে আবার চেষ্টা করুন।");
       }

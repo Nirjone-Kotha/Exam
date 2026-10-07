@@ -70,9 +70,8 @@ function SignUpContent() {
           navigator.vibrate([20, 60, 20]);
         }
         setTimeout(() => {
-          router.push(redirectUrl);
-          router.refresh();
-        }, 1000);
+          window.location.href = redirectUrl;
+        }, 500);
       } else {
         setErrorMessage(res.error || "অ্যাকাউন্ট তৈরি করা সম্ভব হয়নি। আবার চেষ্টা করুন।");
       }
