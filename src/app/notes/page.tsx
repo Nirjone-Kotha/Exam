@@ -45,9 +45,23 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
 export default function NotesIndexPage() {
   const [allNotes, setAllNotes] = useState<SubjectNote[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [dbStatus, setDbStatus] = useState<{
+    neonConnected: boolean;
+    upstashConnected: boolean;
+  }>({ neonConnected: false, upstashConnected: false });
 
   useEffect(() => {
     setAllNotes(getAllNotesLocal());
+
+    fetch("/api/db-status")
+      .then((res) => res.json())
+      .then((data) => {
+        setDbStatus({
+          neonConnected: !!data?.neon?.connected,
+          upstashConnected: !!data?.upstash?.connected,
+        });
+      })
+      .catch(() => {});
   }, []);
 
   const filteredSubjects = SUBJECTS_DATA.filter((sub) =>
@@ -82,6 +96,25 @@ export default function NotesIndexPage() {
             <span className="px-3 py-1 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 font-bold">
               Subjects: <strong className="text-emerald-300">{SUBJECTS_DATA.length}</strong>
             </span>
+
+            {dbStatus.neonConnected ? (
+              <span className="px-3 py-1 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                Neon Postgres Active
+              </span>
+            ) : (
+              <span className="px-3 py-1 rounded-xl bg-slate-500/20 text-slate-300 border border-slate-500/30 font-semibold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-indigo-400" />
+                Local Storage Active
+              </span>
+            )}
+
+            {dbStatus.upstashConnected && (
+              <span className="px-3 py-1 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                Upstash Redis Cached
+              </span>
+            )}
           </div>
         </div>
 
