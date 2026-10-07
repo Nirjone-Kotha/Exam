@@ -14,9 +14,7 @@ import {
   ArrowLeft,
   AlertCircle,
   CheckCircle2,
-  Award,
-  Sparkles,
-  Smartphone
+  Award
 } from "lucide-react";
 
 function SignInContent() {
@@ -71,10 +69,6 @@ function SignInContent() {
     }
   };
 
-  const handleQuickDemoFill = () => {
-    setIdentifier("01700123456");
-    setPassword("123456");
-  };
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-8 sm:py-12">
@@ -199,17 +193,6 @@ function SignInContent() {
             </button>
           </form>
 
-          {/* Quick Demo Fill button */}
-          <div className="pt-1">
-            <button
-              type="button"
-              onClick={handleQuickDemoFill}
-              className="w-full py-2 px-3 rounded-xl border border-dashed border-emerald-300 dark:border-emerald-800/80 bg-emerald-50/50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 text-xs font-semibold hover:bg-emerald-100/60 transition-colors flex items-center justify-center gap-1.5"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
-              <span>ডেমো টেস্ট ডাটা দিয়ে অটো-ফিল করুন (Auto Fill Demo)</span>
-            </button>
-          </div>
 
           {/* Switch to Sign Up */}
           <div className="text-center pt-2 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500">
