@@ -74,3 +74,27 @@ export interface SubjectNote {
   category: NoteCategory;
   createdAt: number;
 }
+
+export interface CollectedNote {
+  id: string;
+  subjectId: string;
+  subjectName: string;
+  topic: string;
+  content: string; // The full collected study note/paragraph
+  createdAt: number;
+  updatedAt: number;
+}
+
+export interface AppUser {
+  id: string;
+  name: string;
+  identifier: string; // Email or phone number
+  identifierType: "email" | "phone";
+  createdAt: number;
+}
+
+export interface AuthState {
+  user: AppUser | null;
+  isAuthenticated: boolean;
+}
+

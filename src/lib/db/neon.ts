@@ -25,7 +25,7 @@ export async function initializeNeonSchema(): Promise<boolean> {
   if (!sql) return false;
 
   try {
-    // Create notes table
+    // Create subject_notes table
     await sql`
       CREATE TABLE IF NOT EXISTS subject_notes (
         id VARCHAR(64) PRIMARY KEY,
@@ -42,6 +42,37 @@ export async function initializeNeonSchema(): Promise<boolean> {
     await sql`
       CREATE INDEX IF NOT EXISTS idx_subject_notes_page 
       ON subject_notes (subject_id, page_number ASC);
+    `;
+
+    // Create collected_notes table
+    await sql`
+      CREATE TABLE IF NOT EXISTS collected_notes (
+        id VARCHAR(64) PRIMARY KEY,
+        subject_id VARCHAR(64) NOT NULL,
+        subject_name VARCHAR(128) NOT NULL,
+        topic TEXT NOT NULL,
+        content TEXT NOT NULL,
+        created_at BIGINT NOT NULL,
+        updated_at BIGINT NOT NULL
+      );
+    `;
+
+    await sql`
+      CREATE INDEX IF NOT EXISTS idx_collected_notes_subject 
+      ON collected_notes (subject_id, created_at DESC);
+    `;
+
+    // Create app_users table for persistent cross-device authentication
+    await sql`
+      CREATE TABLE IF NOT EXISTS app_users (
+        id VARCHAR(64) PRIMARY KEY,
+        name VARCHAR(128) NOT NULL,
+        identifier VARCHAR(128) UNIQUE NOT NULL,
+        identifier_type VARCHAR(16) NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at BIGINT NOT NULL,
+        updated_at BIGINT NOT NULL
+      );
     `;
 
     return true;
